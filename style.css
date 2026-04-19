@@ -282,7 +282,7 @@ body {
 .hero-bg {
   position: absolute;
   top: 0; left: 0; right: 0; bottom: 0;
-  background-image: url('images/hero-bg.jpg');
+  background-image: url('Images/hero-bg.jpg');
   background-size: cover;
   background-position: center;
   animation: zoomSlow 8s ease-in-out infinite alternate;
