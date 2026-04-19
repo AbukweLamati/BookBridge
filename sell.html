@@ -1,0 +1,464 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Sell Your Books — BookBridge</title>
+  <link href="https://fonts.googleapis.com/css2?family=Lora:wght@700&family=Poppins:wght@400;600&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+  <!-- NAVBAR (identical to all other pages) -->
+  <nav class="navbar">
+    <a href="index.html" class="logo">Book<span>Bridge</span></a>
+    <ul class="nav-links">
+      <li><a href="index.html">Home</a></li>
+      <li class="nav-dropdown">
+        <a href="past-papers.html">Past Papers &#9662;</a>
+        <div class="dropdown-menu">
+          <div class="dropdown-faculty">
+            <a href="past-papers.html?fac=health">&#127973; Health Sciences <span>&#8250;</span></a>
+            <div class="sub-menu">
+              <a href="past-papers.html?fac=health&sub=Medicine">Medicine</a>
+              <a href="past-papers.html?fac=health&sub=Nursing">Nursing</a>
+              <a href="past-papers.html?fac=health&sub=Pharmacy">Pharmacy</a>
+            </div>
+          </div>
+          <div class="dropdown-faculty">
+            <a href="past-papers.html?fac=science">&#128300; Science <span>&#8250;</span></a>
+            <div class="sub-menu">
+              <a href="past-papers.html?fac=science&sub=Biology">Biology</a>
+              <a href="past-papers.html?fac=science&sub=Chemistry">Chemistry</a>
+              <a href="past-papers.html?fac=science&sub=Physics">Physics</a>
+            </div>
+          </div>
+          <div class="dropdown-faculty">
+            <a href="past-papers.html?fac=commerce">&#128176; Commerce <span>&#8250;</span></a>
+            <div class="sub-menu">
+              <a href="past-papers.html?fac=commerce&sub=Accounting">Accounting</a>
+              <a href="past-papers.html?fac=commerce&sub=Finance">Finance</a>
+              <a href="past-papers.html?fac=commerce&sub=Economics">Economics</a>
+            </div>
+          </div>
+          <div class="dropdown-faculty">
+            <a href="past-papers.html?fac=humanities">&#127963; Humanities <span>&#8250;</span></a>
+            <div class="sub-menu">
+              <a href="past-papers.html?fac=humanities&sub=Psychology">Psychology</a>
+              <a href="past-papers.html?fac=humanities&sub=Philosophy">Philosophy</a>
+              <a href="past-papers.html?fac=humanities&sub=History">History</a>
+            </div>
+          </div>
+          <div class="dropdown-faculty">
+            <a href="past-papers.html?fac=engineering">&#9881; Engineering <span>&#8250;</span></a>
+            <div class="sub-menu">
+              <a href="past-papers.html?fac=engineering&sub=Mechanical">Mechanical</a>
+              <a href="past-papers.html?fac=engineering&sub=Electrical">Electrical</a>
+              <a href="past-papers.html?fac=engineering&sub=Civil">Civil</a>
+            </div>
+          </div>
+          <div class="dropdown-faculty">
+            <a href="past-papers.html?fac=law">&#9878; Law <span>&#8250;</span></a>
+            <div class="sub-menu">
+              <a href="past-papers.html?fac=law&sub=Constitutional Law">Constitutional</a>
+              <a href="past-papers.html?fac=law&sub=Commercial Law">Commercial</a>
+              <a href="past-papers.html?fac=law&sub=Criminal Law">Criminal</a>
+            </div>
+          </div>
+        </div>
+      </li>
+      <li class="nav-dropdown">
+        <a href="#">Faculties &#9662;</a>
+        <div class="dropdown-menu">
+          <div class="dropdown-faculty"><a href="faculty-health.html">&#127973; Health Sciences</a></div>
+          <div class="dropdown-faculty"><a href="faculty-science.html">&#128300; Science</a></div>
+          <div class="dropdown-faculty"><a href="faculty-commerce.html">&#128176; Commerce</a></div>
+          <div class="dropdown-faculty"><a href="faculty-humanities.html">&#127963; Humanities</a></div>
+          <div class="dropdown-faculty"><a href="faculty-engineering.html">&#9881; Engineering</a></div>
+          <div class="dropdown-faculty"><a href="faculty-law.html">&#9878; Law</a></div>
+        </div>
+      </li>
+      <li><a href="testimonials.html">Testimonials</a></li>
+      <li><a href="about.html">About Us</a></li>
+      <li><a href="contact.html">Contact</a></li>
+      <li><input type="text" class="nav-search" placeholder="Search by module code..."></li>
+      <li><a href="#" class="nav-icon">&#9825;</a></li>
+      <li><a href="cart.html" class="nav-icon">&#128722;</a></li>
+    </ul>
+  </nav>
+
+  <!-- PAGE HEADER -->
+  <div class="page-header">
+    <div class="breadcrumb">
+      <a href="index.html">Home</a>
+      <span class="sep">&#8250;</span>
+      <span class="current">Sell Your Books</span>
+    </div>
+    <h1>Sell Your <span>Books</span></h1>
+    <p>List your second-hand textbooks and reach hundreds of UCT students instantly.</p>
+  </div>
+
+  <!-- SELL PAGE LAYOUT -->
+  <div class="sell-layout">
+
+    <!-- LEFT: LISTING FORM -->
+    <div class="sell-form-card reveal">
+      <div class="sell-form-card-header">
+        <h2>List a book</h2>
+        <p>Fill in the details below — it takes less than 2 minutes.</p>
+      </div>
+
+      <div class="sell-form-body">
+
+        <!-- SELLER INFO -->
+        <div class="form-section-label">Your details</div>
+
+        <div class="form-row-2">
+          <div class="form-group">
+            <label>First Name <span class="req-star">*</span></label>
+            <input type="text" id="s-fname" placeholder="e.g. Sipho">
+          </div>
+          <div class="form-group">
+            <label>Surname <span class="req-star">*</span></label>
+            <input type="text" id="s-lname" placeholder="e.g. Nkosi">
+          </div>
+        </div>
+
+        <div class="form-row-2">
+          <div class="form-group">
+            <label>Student Number <span class="req-star">*</span></label>
+            <input type="text" id="s-studno" placeholder="e.g. NKSSI001">
+          </div>
+          <div class="form-group">
+            <label>Year of Study</label>
+            <select id="s-year">
+              <option value="" disabled selected>Select year...</option>
+              <option>1st year</option>
+              <option>2nd year</option>
+              <option>3rd year</option>
+              <option>4th year</option>
+              <option>Postgraduate</option>
+              <option>Recent graduate</option>
+            </select>
+          </div>
+        </div>
+
+        <div class="form-row-2">
+          <div class="form-group">
+            <label>Email Address <span class="req-star">*</span></label>
+            <input type="email" id="s-email" placeholder="e.g. NKSSI001@myuct.ac.za">
+          </div>
+          <div class="form-group">
+            <label>Phone / WhatsApp</label>
+            <input type="tel" id="s-phone" placeholder="e.g. 071 234 5678">
+          </div>
+        </div>
+
+        <!-- BOOK DETAILS -->
+        <div class="form-section-label" style="margin-top:10px;">Book details</div>
+
+        <div class="form-row-2">
+          <div class="form-group">
+            <label>Faculty <span class="req-star">*</span></label>
+            <select id="s-faculty">
+              <option value="" disabled selected>Select faculty...</option>
+              <option>Health Sciences</option>
+              <option>Science</option>
+              <option>Commerce</option>
+              <option>Humanities</option>
+              <option>Engineering</option>
+              <option>Law</option>
+            </select>
+          </div>
+          <div class="form-group">
+            <label>Module Code <span class="req-star">*</span></label>
+            <input type="text" id="s-module" placeholder="e.g. ECO1010F">
+          </div>
+        </div>
+
+        <div class="form-group">
+          <label>Book Title <span class="req-star">*</span></label>
+          <input type="text" id="s-title" placeholder="e.g. Principles of Microeconomics">
+        </div>
+
+        <div class="form-row-2">
+          <div class="form-group">
+            <label>Author</label>
+            <input type="text" id="s-author" placeholder="e.g. N. Gregory Mankiw">
+          </div>
+          <div class="form-group">
+            <label>ISBN</label>
+            <input type="text" id="s-isbn" placeholder="e.g. 978-1-4737-5488-7">
+          </div>
+        </div>
+
+        <!-- CONDITION & PRICE -->
+        <div class="form-section-label" style="margin-top:10px;">Condition &amp; pricing</div>
+
+        <div class="form-row-2">
+          <div class="form-group">
+            <label>Book Condition <span class="req-star">*</span></label>
+            <select id="s-condition">
+              <option value="" disabled selected>Select condition...</option>
+              <option>Like New — barely used, no marks</option>
+              <option>Good — light use, minor highlights</option>
+              <option>Acceptable — well used but complete</option>
+            </select>
+          </div>
+          <div class="form-group">
+            <label>Asking Price (Rands) <span class="req-star">*</span></label>
+            <input type="number" id="s-price" placeholder="e.g. 350" min="0">
+          </div>
+        </div>
+
+        <div class="form-group">
+          <label>Reason for selling</label>
+          <select id="s-reason">
+            <option value="" disabled selected>Select reason...</option>
+            <option>Finished the module</option>
+            <option>Switched courses</option>
+            <option>Graduated</option>
+            <option>Have duplicate copy</option>
+            <option>Prefer digital / PDF</option>
+            <option>Other</option>
+          </select>
+        </div>
+
+        <div class="form-group">
+          <label>Your review / comment about the book</label>
+          <textarea id="s-review" placeholder="Tell buyers about the book's condition, any useful highlights, why it helped you..."></textarea>
+        </div>
+
+        <!-- SUBMIT -->
+        <button class="btn-main" style="width:100%;margin:8px 0 0;font-size:15px;padding:14px;" onclick="submitListing(event)">
+          List my book &#128218;
+        </button>
+
+        <!-- Success message — hidden until submit -->
+        <div class="form-success-msg" id="sellSuccess">
+          <span style="font-size:1.3rem;">&#10003;</span>
+          <span>Your book has been listed! Students can now find and contact you.</span>
+        </div>
+
+      </div><!-- /sell-form-body -->
+    </div><!-- /sell-form-card -->
+
+
+    <!-- RIGHT SIDEBAR -->
+    <div class="sell-sidebar">
+
+      <!-- WHY SELL BANNER -->
+      <div style="background:#1C1C1C;border-radius:12px;padding:24px;border-top:3px solid #C1440E;" class="reveal reveal-delay-1">
+        <h3 style="font-family:'Lora',serif;font-size:17px;color:white;margin-bottom:12px;">Why sell on BookBridge?</h3>
+        <ul style="list-style:none;display:flex;flex-direction:column;gap:10px;">
+          <li style="font-size:13px;color:#ccc;display:flex;gap:10px;align-items:flex-start;">
+            <span style="color:#C1440E;font-weight:700;flex-shrink:0;">&#10003;</span>
+            Reach 200+ active UCT students every semester
+          </li>
+          <li style="font-size:13px;color:#ccc;display:flex;gap:10px;align-items:flex-start;">
+            <span style="color:#C1440E;font-weight:700;flex-shrink:0;">&#10003;</span>
+            Free to list — no fees, no commissions
+          </li>
+          <li style="font-size:13px;color:#ccc;display:flex;gap:10px;align-items:flex-start;">
+            <span style="color:#C1440E;font-weight:700;flex-shrink:0;">&#10003;</span>
+            Most books sell within 1–3 days at semester start
+          </li>
+          <li style="font-size:13px;color:#ccc;display:flex;gap:10px;align-items:flex-start;">
+            <span style="color:#C1440E;font-weight:700;flex-shrink:0;">&#10003;</span>
+            Meet buyers on campus — no shipping needed
+          </li>
+          <li style="font-size:13px;color:#ccc;display:flex;gap:10px;align-items:flex-start;">
+            <span style="color:#C1440E;font-weight:700;flex-shrink:0;">&#10003;</span>
+            Help a fellow student afford their education
+          </li>
+        </ul>
+      </div>
+
+      <!-- BOOKS STUDENTS ARE LOOKING FOR -->
+      <div class="looking-for-section reveal reveal-delay-2">
+        <div class="looking-for-header">
+          <h3>&#128218; Books Students Are Looking For</h3>
+          <p>If you have any of these, list them now — buyers are waiting.</p>
+        </div>
+
+        <!-- 6 hardcoded wanted items -->
+        <div class="wanted-book-item">
+          <div class="wanted-icon">&#128300;</div>
+          <div class="wanted-info">
+            <h4>Calculus: Early Transcendentals</h4>
+            <p>MAM1000W &middot; Science</p>
+          </div>
+          <span class="wanted-badge">3 requests</span>
+        </div>
+
+        <div class="wanted-book-item">
+          <div class="wanted-icon">&#127973;</div>
+          <div class="wanted-info">
+            <h4>Gray's Anatomy for Students</h4>
+            <p>ANA1005F &middot; Health Sciences</p>
+          </div>
+          <span class="wanted-badge">5 requests</span>
+        </div>
+
+        <div class="wanted-book-item">
+          <div class="wanted-icon">&#128176;</div>
+          <div class="wanted-info">
+            <h4>Principles of Microeconomics</h4>
+            <p>ECO1010F &middot; Commerce</p>
+          </div>
+          <span class="wanted-badge">4 requests</span>
+        </div>
+
+        <div class="wanted-book-item">
+          <div class="wanted-icon">&#9881;</div>
+          <div class="wanted-info">
+            <h4>Signals &amp; Systems (Oppenheim)</h4>
+            <p>EEE3046W &middot; Engineering</p>
+          </div>
+          <span class="wanted-badge">2 requests</span>
+        </div>
+
+        <div class="wanted-book-item">
+          <div class="wanted-icon">&#9878;</div>
+          <div class="wanted-info">
+            <h4>Constitutional Law of South Africa</h4>
+            <p>LAW2030S &middot; Law</p>
+          </div>
+          <span class="wanted-badge">6 requests</span>
+        </div>
+
+        <div class="wanted-book-item">
+          <div class="wanted-icon">&#127963;</div>
+          <div class="wanted-info">
+            <h4>Psychology: Themes &amp; Variations</h4>
+            <p>PSY1004F &middot; Humanities</p>
+          </div>
+          <span class="wanted-badge">2 requests</span>
+        </div>
+
+      </div><!-- /looking-for-section -->
+
+
+      <!-- PREVIEW LISTING CARD -->
+      <div class="preview-section reveal reveal-delay-3">
+        <div class="preview-header">
+          <h3>&#128065; Preview: How your listing will look</h3>
+          <p>This is what buyers see when browsing.</p>
+        </div>
+
+        <!-- Static example card — mirrors .book-card exactly -->
+        <div class="book-card preview-book-card">
+          <div class="book-thumb">
+            <img src="Images/Principles of MacroEconomics.png" alt="Preview book cover">
+            <div class="book-badge-row">
+              <span class="badge badge-faculty">Commerce</span>
+              <span class="badge badge-good">Good</span>
+            </div>
+          </div>
+          <div class="book-info">
+            <div class="book-code">ECO1010F</div>
+            <div class="book-title">Principles of Microeconomics</div>
+            <div class="book-review">"Covered the entire ECO1010 syllabus. My notes in the margins are very useful for the exam."</div>
+            <div class="book-seller">Sold by: <span>Your Name, 3rd year</span></div>
+          </div>
+          <div class="book-price-row">
+            <div class="book-price">R350</div>
+            <button class="book-buy-btn" style="cursor:default;opacity:0.7;">Buy Now</button>
+          </div>
+        </div>
+
+        <p style="font-size:11px;color:#aaa;padding:10px 14px;text-align:center;">
+          &#9432; Your real listing will show your details and your own review.
+        </p>
+      </div><!-- /preview-section -->
+
+    </div><!-- /sell-sidebar -->
+
+  </div><!-- /sell-layout -->
+
+
+  <footer class="footer">
+    <p>&#169; 2025 BookBridge &middot; Made with &#10084;&#65039; for South African students &middot;
+      <a href="about.html">Our Story</a> &middot; <a href="contact.html">Contact</a></p>
+  </footer>
+
+
+  <script>
+    /* ── SCROLL REVEAL ── */
+    const revealObserver = new IntersectionObserver((entries) => {
+      entries.forEach(e => {
+        if (e.isIntersecting) {
+          e.target.classList.add('visible');
+          revealObserver.unobserve(e.target);
+        }
+      });
+    }, { threshold: 0.08 });
+    document.querySelectorAll('.reveal').forEach(el => revealObserver.observe(el));
+
+
+    /* ── SUBMIT LISTING ── */
+    function submitListing(e) {
+      const btn     = e.target;
+      const fname   = document.getElementById('s-fname').value.trim();
+      const lname   = document.getElementById('s-lname').value.trim();
+      const studno  = document.getElementById('s-studno').value.trim();
+      const email   = document.getElementById('s-email').value.trim();
+      const faculty = document.getElementById('s-faculty').value;
+      const module  = document.getElementById('s-module').value.trim();
+      const title   = document.getElementById('s-title').value.trim();
+      const cond    = document.getElementById('s-condition').value;
+      const price   = document.getElementById('s-price').value.trim();
+
+      // Validate required fields
+      if (!fname || !lname || !studno || !email || !faculty || !module || !title || !cond || !price) {
+        // Shake the button
+        btn.style.transition = 'transform 0.08s ease';
+        ['-6px','6px','-5px','5px','-3px','0px'].forEach((x, i) =>
+          setTimeout(() => btn.style.transform = 'translateX(' + x + ')', i * 75)
+        );
+
+        // Briefly highlight the first empty required field
+        const fields = ['s-fname','s-lname','s-studno','s-email','s-faculty','s-module','s-title','s-condition','s-price'];
+        for (const id of fields) {
+          const el = document.getElementById(id);
+          if (!el.value.trim()) {
+            el.focus();
+            el.style.borderColor = '#C1440E';
+            el.style.boxShadow = '0 0 0 4px rgba(193,68,14,0.15)';
+            setTimeout(() => {
+              el.style.borderColor = '';
+              el.style.boxShadow = '';
+            }, 2000);
+            break;
+          }
+        }
+        return;
+      }
+
+      // Success
+      btn.disabled = true;
+      btn.textContent = 'Listing your book...';
+      btn.style.opacity = '0.7';
+
+      setTimeout(() => {
+        btn.textContent = '&#10003; Listed!';
+        btn.style.background = '#4A6741';
+        btn.style.opacity = '1';
+
+        const msg = document.getElementById('sellSuccess');
+        msg.classList.add('show');
+        msg.scrollIntoView({ behavior: 'smooth', block: 'nearest' });
+
+        alert(
+          'Your book has been listed!\n\n' +
+          '"' + title + '"\n' +
+          module + ' \u00B7 ' + faculty + '\n' +
+          'Price: R' + price + '\n\n' +
+          'Students can now find and contact you via BookBridge.'
+        );
+      }, 1000);
+    }
+  </script>
+
+</body>
+</html>

@@ -1,0 +1,127 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>About Us — BookBridge</title>
+  <link href="https://fonts.googleapis.com/css2?family=Lora:wght@700&family=Poppins:wght@400;600&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+  <nav class="navbar">
+    <a href="index.html" class="logo">Book<span>Bridge</span></a>
+    <ul class="nav-links">
+      <li><a href="index.html">Home</a></li>
+      <li><a href="past-papers.html">Past Papers</a></li>
+      <li class="nav-dropdown"><a href="#">Faculties ▾</a>
+        <div class="dropdown-menu">
+          <div class="dropdown-faculty"><a href="faculty health.html">🏥 Health Sciences</a></div>
+          <div class="dropdown-faculty"><a href="faculty science.html">🔬 Science</a></div>
+          <div class="dropdown-faculty"><a href="faculty commerce.html">💰 Commerce</a></div>
+          <div class="dropdown-faculty"><a href="faculty humanities.html">🏛️ Humanities</a></div>
+          <div class="dropdown-faculty"><a href="faculty EBE.html">⚙️ Engineering</a></div>
+          <div class="dropdown-faculty"><a href="faculty law.html">⚖️ Law</a></div>
+        </div>
+      </li>
+      <li><a href="testimonals.html">Testimonials</a></li>
+      <li><a href="about.html" class="active">About Us</a></li>
+      <li><a href="contact.html">Contact</a></li>
+      <li><input type="text" class="nav-search" placeholder="Search by module code..."></li>
+      <li><a href="#" class="nav-icon">♡</a></li>
+      <li><a href="cart.html" class="nav-icon">🛒</a></li>
+    </ul>
+  </nav>
+
+  <!-- ABOUT HERO -->
+  <section class="about-hero">
+    <div style="animation: fadeIn 0.6s ease;">
+      <p style="font-size:12px;font-weight:600;letter-spacing:0.15em;text-transform:uppercase;color:#C1440E;margin-bottom:12px;">Our Story</p>
+      <h1>Built by a student,<br>for students.</h1>
+      <p style="margin-top:12px;">A UCT student saw a broken system and decided to fix it.</p>
+    </div>
+  </section>
+
+  <!-- STATS -->
+  <div style="background:#F8F8F6;padding:40px 40px;">
+    <div class="about-stats" style="max-width:900px;margin:0 auto;">
+      <div class="about-stat reveal reveal-delay-1">
+        <div class="about-stat-num" data-target="200">0+</div>
+        <div class="about-stat-label">Students served</div>
+      </div>
+      <div class="about-stat reveal reveal-delay-2">
+        <div class="about-stat-num" data-target="50">0+</div>
+        <div class="about-stat-label">Past papers available</div>
+      </div>
+      <div class="about-stat reveal reveal-delay-3">
+        <div class="about-stat-num" style="color:#4A6741;" data-target="450">R0</div>
+        <div class="about-stat-label">Average saving per student</div>
+      </div>
+    </div>
+  </div>
+
+  <!-- STORY -->
+  <div class="about-content">
+    <div class="about-section reveal">
+      <h2>The Problem</h2>
+      <p>Every semester, thousands of South African university students find themselves in a situation that has nothing to do with how hard they studied. The prescribed textbook costs R900, NSFAS has not paid out yet, and the library has one copy for two hundred students. So you do what everyone does: you post in a WhatsApp group, you walk around campus looking for handwritten posters on notice boards, and you hope someone replies.</p>
+      <p>I have been that student. I fell behind in Business Ethics not because I didn't care about the work, but because I could not get the textbook in time.</p>
+    </div>
+
+    <div class="about-section reveal">
+      <h2>The Solution</h2>
+      <p>BookBridge was built to fix this. I am a final year UCT student trying to improve inclusivity. The idea is simple: students who have finished their modules sell their books to students who need them. No markups. No middlemen. Just students helping students.</p>
+      <p>What started as a shared spreadsheet in a WhatsApp group has grown into a platform with over 200 students, 25+ textbooks across 6 faculties, and a growing archive of past papers that lecturers don't always make easy to find.</p>
+    </div>
+
+    <div class="about-section reveal">
+      <h2>Who We Are</h2>
+      <p>Currently, BookBridge is limited to UCT students, with plans to expand to all South African universities. We are not a company — we are a community project run on evenings and weekends by students who believe access to education should not depend on whether NSFAS remembered to pay your allowance this month.</p>
+      <p>Every book sold on this platform represents one less student falling behind because they couldn't afford to stay ahead.</p>
+    </div>
+
+    <div class="about-section reveal">
+      <h2>What's Coming</h2>
+      <p>We are working on expanding to Stellenbosch University, WITS, and UJ in 2027. If you are a student at any of these institutions and want to bring BookBridge to your campus, reach out — we would love your help.</p>
+      <p>We are also building a module review system where students can rate courses and share honest feedback — the kind of information that nobody puts in the official handbook.</p>
+    </div>
+
+    <div style="background: #1C1C1C; border-radius: 12px; padding: 32px; margin-top: 40px; text-align:center; animation: fadeIn 0.6s ease;" class="reveal">
+      <p style="font-family:'Lora',serif;font-size:20px;color:white;line-height:1.7;margin-bottom:20px;">"Education is the most powerful weapon which you can use to change the world — but only if you can afford the textbook."</p>
+      <a href="shop.html" class="btn-main">Browse all books</a>
+      <a href="contact.html" class="btn-outline" style="margin-left:12px;">Get in touch</a>
+    </div>
+  </div>
+
+  <footer class="footer">
+    <p>© 2025 BookBridge · Made with ❤️ for South African students · Built at UCT</p>
+  </footer>
+
+  <script>
+    const obs = new IntersectionObserver(entries => {
+      entries.forEach(e => { if (e.isIntersecting) { e.target.classList.add('visible'); obs.unobserve(e.target); } });
+    }, { threshold: 0.1 });
+    document.querySelectorAll('.reveal').forEach(el => obs.observe(el));
+
+    // Count up stats
+    const statObs = new IntersectionObserver(entries => {
+      entries.forEach(e => {
+        if (e.isIntersecting) {
+          const target = parseInt(e.target.dataset.target);
+          let start = 0;
+          const step = Math.ceil(target / 60);
+          const prefix = e.target.textContent.startsWith('R') ? 'R' : '';
+          const suffix = '+';
+          const t = setInterval(() => {
+            start = Math.min(start + step, target);
+            e.target.textContent = prefix + start + (start < target ? '' : suffix);
+            if (start >= target) clearInterval(t);
+          }, 16);
+          statObs.unobserve(e.target);
+        }
+      });
+    }, { threshold: 0.5 });
+    document.querySelectorAll('[data-target]').forEach(el => statObs.observe(el));
+  </script>
+</body>
+</html>

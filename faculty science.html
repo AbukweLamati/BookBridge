@@ -1,0 +1,171 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Science Faculty — BookBridge</title>
+  <link href="https://fonts.googleapis.com/css2?family=Lora:wght@700&family=Poppins:wght@400;600&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+  <nav class="navbar">
+    <a href="index.html" class="logo">Book<span>Bridge</span></a>
+    <ul class="nav-links">
+      <li><a href="index.html">Home</a></li>
+      <li class="nav-dropdown"><a href="past-papers.html">Past Papers ▾</a>
+        <div class="dropdown-menu">
+          <div class="dropdown-faculty"><a href="past-papers.html?fac=health">🏥 Health Sciences</a></div>
+          <div class="dropdown-faculty"><a href="past-papers.html?fac=science">🔬 Science</a></div>
+          <div class="dropdown-faculty"><a href="past-papers.html?fac=commerce">💰 Commerce</a></div>
+          <div class="dropdown-faculty"><a href="past-papers.html?fac=humanities">🏛️ Humanities</a></div>
+          <div class="dropdown-faculty"><a href="past-papers.html?fac=engineering">⚙️ Engineering</a></div>
+          <div class="dropdown-faculty"><a href="past-papers.html?fac=law">⚖️ Law</a></div>
+        </div>
+      </li>
+      <li class="nav-dropdown"><a href="#" class="active">Faculties ▾</a>
+        <div class="dropdown-menu">
+          <div class="dropdown-faculty"><a href="faculty health.html">🏥 Health Sciences</a></div>
+          <div class="dropdown-faculty"><a href="faculty science.html" style="color:white;font-weight:600;">🔬 Science</a></div>
+          <div class="dropdown-faculty"><a href="faculty commerce.html">💰 Commerce</a></div>
+          <div class="dropdown-faculty"><a href="faculty humanities.html">🏛️ Humanities</a></div>
+          <div class="dropdown-faculty"><a href="faculty EBE.html">⚙️ Engineering</a></div>
+          <div class="dropdown-faculty"><a href="faculty law.html">⚖️ Law</a></div>
+        </div>
+      </li>
+      <li><a href="testimonals.html">Testimonials</a></li>
+      <li><a href="about.html">About Us</a></li>
+      <li><a href="contact.html">Contact</a></li>
+      <li><input type="text" class="nav-search" id="navSearch" placeholder="Search by module code..." oninput="applyFilters()"></li>
+      <li><a href="wishlist.html" class="nav-icon" style="position:relative;">♡<span class="wishlist-badge" style="display:none;"></span></a></li>
+      <li><a href="cart.html" class="nav-icon" style="position:relative;">🛒<span class="cart-badge" style="display:none;"></span></a></li>
+    </ul>
+  </nav>
+
+  <div class="page-header">
+    <div class="breadcrumb">
+      <a href="index.html">Home</a><span class="sep">›</span>
+      <a href="index.html">Faculties</a><span class="sep">›</span>
+      <span class="current">Science</span>
+    </div>
+    <h1>🔬 <span>Science</span> Faculty</h1>
+    <p>Biology, Chemistry, Physics & Geography — find your textbooks here.</p>
+  </div>
+
+  <div class="filter-bar">
+    <input type="text" class="filter-search" id="searchInput" placeholder="Search by module code or title..." oninput="applyFilters()">
+    <span class="chip active" onclick="setChip('all',this)">All</span>
+    <span class="chip" onclick="setChip('Like New',this)">Like New</span>
+    <span class="chip" onclick="setChip('Good',this)">Good</span>
+    <span class="chip" onclick="setChip('Acceptable',this)">Acceptable</span>
+  </div>
+
+  <div style="padding:28px 32px;background:#F8F8F6;min-height:60vh;">
+    <div class="content-title" style="font-family:'Lora',serif;font-size:20px;margin-bottom:4px;">Science Textbooks</div>
+    <div id="resultCount" style="font-size:12px;color:#888;margin-bottom:24px;"></div>
+    <div id="booksGrid" class="faculty-grid" style="grid-template-columns:repeat(auto-fill,minmax(260px,1fr));gap:20px;"></div>
+  </div>
+
+  <footer class="footer">
+    <p>© 2025 BookBridge · <a href="about.html">Our Story</a></p>
+  </footer>
+
+  <script src="script.js"></script>
+  <script>
+    const BOOKS = [
+      { id:'sci_1', code:'MAM1000W','img':'Images/Calculus Early Transcedentals.png', title:'Calculus: Early Transcendentals', condition:'Good', price:450, seller:'Sipho N., 2nd year', review:'A lifesaver for MAM1. Worked through all the practice sets — great prep.', faculty:'Science' },
+      { id:'sci_2', code:'CHM1000F', 'img':'Images/Chemistry ;The Central Science.png', title:'Chemistry: The Central Science', condition:'Like New', price:600, seller:'Priya R., graduated', review:'Bought two copies, selling the extra. Brand new condition.', faculty:'Science' },
+      { id:'sci_3', code:'PHY1012S', 'img':'Images/University Physics.png', title:'University Physics Vol. 1', condition:'Good', price:380, seller:'Keegan T., 2nd year', review:'A couple of post-it notes still inside — good study notes included!', faculty:'Science' },
+      { id:'sci_4', code:'GEO1001F', 'img':'Images/Physical Geography.png', title:'Physical Geography Today', condition:'Acceptable', price:255, seller:'Zanele M., 3rd year', review:'Cover is worn but all pages intact. Excellent value.', faculty:'Science' },
+      { id:'sci_5', code:'CSC1015F', 'img':'Images/Intro to Programming in Java.png', title:'Introduction to Programming in Java', condition:'Like New', price:420, seller:'Dev P., 2nd year', review:'Only used for one semester before switching to Python.', faculty:'Science' },
+      { id:'sci_6', code:'BIO1000F', 'img':'Images/Cell Biology.png', title:'Campbell Biology 12th Ed.', condition:'Good', price:530, seller:'Amina S., 3rd year', review:'Comprehensive and well-maintained. Some notes in margins.', faculty:'Science' }
+
+    ];
+    let conditionFilter = 'all';
+
+    function conditionClass(c) {
+      if (c === 'Like New') return 'badge-new';
+      if (c === 'Good') return 'badge-good';
+      return 'badge-acceptable';
+    }
+
+    function render(list) {
+      const grid = document.getElementById('booksGrid');
+      const resultCount = document.getElementById('resultCount');
+      resultCount.textContent = `Showing ${list.length} book${list.length !== 1 ? 's' : ''}`;
+      
+      if (!list.length) {
+        grid.innerHTML = '<div class="empty" style="grid-column:1/-1;"><div class="empty-icon">📚</div><h3>No books match</h3><p>Try a different filter.</p></div>';
+        return;
+      }
+      
+      let html = '';
+      for (let i = 0; i < list.length; i++) {
+        const b = list[i];
+        html += `
+          <div class="book-card reveal reveal-delay-${(i % 4) + 1}">
+            <div class="book-thumb">
+              <img src="${b.img}" alt="${b.title}" style="object-fit:cover; width:100%; height:100%;" onerror="this.src='images/past%20papers.png'">
+              <div class="book-badge-row">
+                <span class="badge badge-faculty">Science</span>
+                <span class="badge ${conditionClass(b.condition)}">${b.condition}</span>
+              </div>
+            </div>
+            <div class="book-info">
+              <div class="book-code">${b.code}</div>
+              <div class="book-title">${b.title}</div>
+              <div class="book-review">"${b.review}"</div>
+              <div class="book-seller">Sold by: <span>${b.seller}</span></div>
+            </div>
+            <div class="book-price-row">
+              <div class="book-price">R${b.price}</div>
+              <div class="book-actions">
+                <button class="btn-cart" data-id="${b.id}" onclick="addToCart(${JSON.stringify(b)})">Add to Cart 🛒</button>
+                <button class="btn-wishlist" data-id="${b.id}" onclick="toggleWishlist(${JSON.stringify(b)})" title="Wishlist">♡</button>
+              </div>
+            </div>
+          </div>
+        `;
+      }
+      grid.innerHTML = html;
+      
+      // Update wishlist button states if function exists
+      if (typeof syncWishlistButtons === 'function') {
+        syncWishlistButtons();
+      }
+      initReveal();
+    }
+
+    function setChip(val, el) {
+      conditionFilter = val;
+      document.querySelectorAll('.chip').forEach(c => c.classList.remove('active'));
+      el.classList.add('active');
+      applyFilters();
+    }
+
+    function applyFilters() {
+      const search = document.getElementById('searchInput').value.toLowerCase();
+      let list = BOOKS.filter(b => {
+        if (conditionFilter !== 'all' && b.condition !== conditionFilter) return false;
+        if (search && !b.title.toLowerCase().includes(search) && !b.code.toLowerCase().includes(search)) return false;
+        return true;
+      });
+      render(list);
+    }
+
+    function initReveal() {
+      const observer = new IntersectionObserver((entries) => {
+        entries.forEach(entry => {
+          if (entry.isIntersecting) {
+            entry.target.classList.add('visible');
+            observer.unobserve(entry.target);
+          }
+        });
+      }, { threshold: 0.1 });
+      document.querySelectorAll('.reveal').forEach(el => observer.observe(el));
+    }
+
+    // Initialize page
+    render(BOOKS);
+  </script>
+</body>
+</html>

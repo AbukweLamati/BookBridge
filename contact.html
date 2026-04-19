@@ -1,0 +1,680 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Contact — BookBridge</title>
+  <link href="https://fonts.googleapis.com/css2?family=Lora:wght@700&family=Poppins:wght@400;600&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="style.css">
+  <style>
+    /* ── PAGE-SPECIFIC CONTACT STYLES ── */
+
+    .contact-page-wrap {
+      max-width: 960px;
+      margin: 0 auto;
+      padding: 56px 40px 80px;
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 40px;
+      align-items: start;
+    }
+
+    /* ── LEFT COLUMN ── */
+    .contact-left {
+      display: flex;
+      flex-direction: column;
+      gap: 28px;
+    }
+
+    /* Person card */
+    .person-card {
+      background: #ffffff;
+      border: 1px solid #E0DDD8;
+      border-radius: 12px;
+      overflow: hidden;
+      transition: box-shadow 0.3s ease;
+    }
+
+    .person-card:hover {
+      box-shadow: 0 10px 32px rgba(193,68,14,0.10);
+    }
+
+    .person-card-header {
+      background: #1C1C1C;
+      padding: 24px 24px 20px;
+      border-bottom: 3px solid #C1440E;
+      display: flex;
+      align-items: center;
+      gap: 18px;
+    }
+
+    .person-avatar {
+      width: 56px;
+      height: 56px;
+      border-radius: 50%;
+      background: #C1440E;
+      color: white;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      font-family: 'Lora', serif;
+      font-size: 22px;
+      font-weight: 700;
+      flex-shrink: 0;
+      border: 2px solid rgba(255,255,255,0.15);
+    }
+
+    .person-name-wrap h3 {
+      font-family: 'Lora', serif;
+      font-size: 18px;
+      color: #ffffff;
+      margin-bottom: 3px;
+    }
+
+    .person-name-wrap p {
+      font-size: 12px;
+      color: #888;
+    }
+
+    .person-card-body {
+      padding: 20px 24px;
+      display: flex;
+      flex-direction: column;
+      gap: 14px;
+    }
+
+    .contact-detail-row {
+      display: flex;
+      align-items: center;
+      gap: 14px;
+      padding: 12px 14px;
+      background: #F8F8F6;
+      border: 1px solid #F0EDE8;
+      border-radius: 8px;
+      transition: all 0.25s ease;
+      text-decoration: none;
+    }
+
+    .contact-detail-row:hover {
+      border-color: #C1440E;
+      background: #fdf8f4;
+      transform: translateX(4px);
+    }
+
+    .detail-icon-wrap {
+      width: 36px;
+      height: 36px;
+      border-radius: 50%;
+      background: #fdf0eb;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      font-size: 16px;
+      flex-shrink: 0;
+    }
+
+    .detail-text-wrap .detail-label {
+      font-size: 10px;
+      font-weight: 700;
+      color: #C1440E;
+      text-transform: uppercase;
+      letter-spacing: 0.08em;
+      margin-bottom: 2px;
+    }
+
+    .detail-text-wrap .detail-value {
+      font-size: 13px;
+      color: #1C1C1C;
+      font-weight: 600;
+      font-family: 'Poppins', sans-serif;
+    }
+
+    /* ── SOCIAL LINKS ── */
+    .social-section {
+      background: #ffffff;
+      border: 1px solid #E0DDD8;
+      border-radius: 12px;
+      overflow: hidden;
+    }
+
+    .social-section-header {
+      padding: 16px 22px;
+      border-bottom: 1px solid #F0EDE8;
+      background: #F8F8F6;
+    }
+
+    .social-section-header h3 {
+      font-family: 'Lora', serif;
+      font-size: 15px;
+      color: #1C1C1C;
+    }
+
+    .social-section-header p {
+      font-size: 11px;
+      color: #888;
+      margin-top: 2px;
+    }
+
+    .social-links-grid {
+      padding: 18px 22px;
+      display: flex;
+      flex-direction: column;
+      gap: 10px;
+    }
+
+    .social-link-row {
+      display: flex;
+      align-items: center;
+      gap: 14px;
+      padding: 11px 14px;
+      border-radius: 8px;
+      border: 1px solid #E0DDD8;
+      text-decoration: none;
+      transition: all 0.25s ease;
+      background: #FDFCFA;
+    }
+
+    .social-link-row:hover {
+      transform: translateX(5px);
+      border-color: var(--sc);
+      background: var(--sc-bg);
+    }
+
+    .social-link-row:hover .social-icon-wrap {
+      background: var(--sc);
+    }
+
+    .social-link-row:hover .social-platform-name {
+      color: var(--sc);
+    }
+
+    .social-icon-wrap {
+      width: 36px;
+      height: 36px;
+      border-radius: 8px;
+      background: #E0DDD8;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      flex-shrink: 0;
+      transition: background 0.25s ease;
+      color: white;
+      font-size: 17px;
+    }
+
+    .social-platform-name {
+      font-size: 13px;
+      font-weight: 600;
+      color: #1C1C1C;
+      font-family: 'Poppins', sans-serif;
+      transition: color 0.25s ease;
+    }
+
+    .social-handle {
+      margin-left: auto;
+      font-size: 11px;
+      color: #aaa;
+      font-family: 'Poppins', sans-serif;
+    }
+
+    /* LinkedIn */
+    .social-link-row.linkedin { --sc: #0077B5; --sc-bg: #e8f3fa; }
+    /* Instagram */
+    .social-link-row.instagram { --sc: #E1306C; --sc-bg: #fce8ef; }
+    /* TikTok */
+    .social-link-row.tiktok { --sc: #010101; --sc-bg: #f0f0f0; }
+    /* X / Twitter */
+    .social-link-row.twitter { --sc: #1DA1F2; --sc-bg: #e8f5fe; }
+
+    /* ── RIGHT COLUMN ── */
+    .contact-right {
+      display: flex;
+      flex-direction: column;
+      gap: 28px;
+    }
+
+    /* FAQ */
+    .faq-section {
+      background: #ffffff;
+      border: 1px solid #E0DDD8;
+      border-radius: 12px;
+      overflow: hidden;
+    }
+
+    .faq-section-header {
+      background: #1C1C1C;
+      border-bottom: 3px solid #C1440E;
+      padding: 20px 24px;
+    }
+
+    .faq-section-header h3 {
+      font-family: 'Lora', serif;
+      font-size: 18px;
+      color: #ffffff;
+      margin-bottom: 3px;
+    }
+
+    .faq-section-header p {
+      font-size: 12px;
+      color: #888;
+    }
+
+    .faq-list {
+      padding: 8px 0;
+    }
+
+    .faq-item {
+      border-bottom: 1px solid #F0EDE8;
+    }
+
+    .faq-item:last-child {
+      border-bottom: none;
+    }
+
+    .faq-question {
+      width: 100%;
+      background: none;
+      border: none;
+      padding: 18px 24px;
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      cursor: pointer;
+      text-align: left;
+      font-family: 'Poppins', sans-serif;
+      font-size: 13px;
+      font-weight: 600;
+      color: #1C1C1C;
+      gap: 12px;
+      transition: background 0.2s ease;
+    }
+
+    .faq-question:hover {
+      background: #fdf8f4;
+    }
+
+    .faq-question.open {
+      color: #C1440E;
+      background: #fdf8f4;
+    }
+
+    .faq-chevron {
+      font-size: 11px;
+      color: #aaa;
+      flex-shrink: 0;
+      transition: transform 0.3s ease, color 0.2s ease;
+      display: inline-block;
+    }
+
+    .faq-question.open .faq-chevron {
+      transform: rotate(180deg);
+      color: #C1440E;
+    }
+
+    .faq-answer {
+      max-height: 0;
+      overflow: hidden;
+      transition: max-height 0.35s ease, padding 0.3s ease;
+      padding: 0 24px;
+    }
+
+    .faq-answer.open {
+      max-height: 200px;
+      padding: 0 24px 18px;
+    }
+
+    .faq-answer p {
+      font-size: 13px;
+      color: #555;
+      line-height: 1.75;
+      border-left: 3px solid #C1440E;
+      padding-left: 14px;
+    }
+
+    /* Response time notice */
+    .response-notice {
+      background: #fdf8f4;
+      border: 1px solid #f0e0d6;
+      border-radius: 10px;
+      padding: 18px 22px;
+      display: flex;
+      align-items: flex-start;
+      gap: 14px;
+    }
+
+    .response-notice-icon {
+      font-size: 22px;
+      flex-shrink: 0;
+      margin-top: 1px;
+    }
+
+    .response-notice h4 {
+      font-size: 13px;
+      font-weight: 700;
+      color: #1C1C1C;
+      margin-bottom: 4px;
+      font-family: 'Poppins', sans-serif;
+    }
+
+    .response-notice p {
+      font-size: 12px;
+      color: #888;
+      line-height: 1.6;
+    }
+
+    /* ── REVEAL ANIMATIONS ── */
+    .contact-left .person-card,
+    .contact-left .social-section,
+    .contact-right .faq-section,
+    .contact-right .response-notice {
+      opacity: 0;
+      transform: translateY(24px);
+      transition: opacity 0.55s ease, transform 0.55s ease;
+    }
+
+    .contact-left .person-card.visible   { opacity: 1; transform: none; transition-delay: 0.05s; }
+    .contact-left .social-section.visible { opacity: 1; transform: none; transition-delay: 0.15s; }
+    .contact-right .faq-section.visible  { opacity: 1; transform: none; transition-delay: 0.1s; }
+    .contact-right .response-notice.visible { opacity: 1; transform: none; transition-delay: 0.2s; }
+
+    /* ── RESPONSIVE ── */
+    @media (max-width: 768px) {
+      .contact-page-wrap {
+        grid-template-columns: 1fr;
+        padding: 36px 20px 60px;
+        gap: 28px;
+      }
+    }
+  </style>
+</head>
+<body>
+
+  <!-- NAVBAR -->
+  <nav class="navbar">
+    <a href="index.html" class="logo">Book<span>Bridge</span></a>
+    <ul class="nav-links">
+      <li><a href="index.html">Home</a></li>
+      <li class="nav-dropdown">
+        <a href="past-papers.html">Past Papers ▾</a>
+        <div class="dropdown-menu">
+          <div class="dropdown-faculty">
+            <a href="past-papers.html?fac=health">🏥 Health Sciences <span>›</span></a>
+            <div class="sub-menu">
+              <a href="past-papers.html?fac=health&sub=Medicine">Medicine</a>
+              <a href="past-papers.html?fac=health&sub=Nursing">Nursing</a>
+              <a href="past-papers.html?fac=health&sub=Pharmacy">Pharmacy</a>
+            </div>
+          </div>
+          <div class="dropdown-faculty">
+            <a href="past-papers.html?fac=science">🔬 Science <span>›</span></a>
+            <div class="sub-menu">
+              <a href="past-papers.html?fac=science&sub=Biology">Biology</a>
+              <a href="past-papers.html?fac=science&sub=Chemistry">Chemistry</a>
+              <a href="past-papers.html?fac=science&sub=Physics">Physics</a>
+            </div>
+          </div>
+          <div class="dropdown-faculty">
+            <a href="past-papers.html?fac=commerce">💰 Commerce <span>›</span></a>
+            <div class="sub-menu">
+              <a href="past-papers.html?fac=commerce&sub=Accounting">Accounting</a>
+              <a href="past-papers.html?fac=commerce&sub=Finance">Finance</a>
+              <a href="past-papers.html?fac=commerce&sub=Economics">Economics</a>
+            </div>
+          </div>
+          <div class="dropdown-faculty">
+            <a href="past-papers.html?fac=humanities">🏛️ Humanities <span>›</span></a>
+            <div class="sub-menu">
+              <a href="past-papers.html?fac=humanities&sub=Psychology">Psychology</a>
+              <a href="past-papers.html?fac=humanities&sub=Philosophy">Philosophy</a>
+              <a href="past-papers.html?fac=humanities&sub=History">History</a>
+            </div>
+          </div>
+          <div class="dropdown-faculty">
+            <a href="past-papers.html?fac=engineering">⚙️ Engineering <span>›</span></a>
+            <div class="sub-menu">
+              <a href="past-papers.html?fac=engineering&sub=Mechanical">Mechanical</a>
+              <a href="past-papers.html?fac=engineering&sub=Electrical">Electrical</a>
+              <a href="past-papers.html?fac=engineering&sub=Civil">Civil</a>
+            </div>
+          </div>
+          <div class="dropdown-faculty">
+            <a href="past-papers.html?fac=law">⚖️ Law <span>›</span></a>
+            <div class="sub-menu">
+              <a href="past-papers.html?fac=law&sub=Constitutional Law">Constitutional</a>
+              <a href="past-papers.html?fac=law&sub=Commercial Law">Commercial</a>
+              <a href="past-papers.html?fac=law&sub=Criminal Law">Criminal</a>
+            </div>
+          </div>
+        </div>
+      </li>
+      <li class="nav-dropdown">
+        <a href="#">Faculties ▾</a>
+        <div class="dropdown-menu">
+          <div class="dropdown-faculty"><a href="faculty health.html">🏥 Health Sciences</a></div>
+          <div class="dropdown-faculty"><a href="faculty science.html">🔬 Science</a></div>
+          <div class="dropdown-faculty"><a href="faculty commerce.html">💰 Commerce</a></div>
+          <div class="dropdown-faculty"><a href="faculty humanities.html">🏛️ Humanities</a></div>
+          <div class="dropdown-faculty"><a href="faculty EBE.html">⚙️ Engineering</a></div>
+          <div class="dropdown-faculty"><a href="faculty law.html">⚖️ Law</a></div>
+        </div>
+      </li>
+      <li><a href="testimonals.html">Testimonials</a></li>
+      <li><a href="about.html">About Us</a></li>
+      <li><a href="contact.html" class="active">Contact</a></li>
+      <li>
+        <input type="text" class="nav-search" placeholder="Search by module code..."
+          onkeydown="if(event.key==='Enter'&&this.value){window.location='shop.html?q='+encodeURIComponent(this.value);}">
+      </li>
+      <li><a href="wishlist.html" class="nav-icon">&#9825;</a></li>
+      <li><a href="cart.html" class="nav-icon">&#128722;</a></li>
+    </ul>
+  </nav>
+
+  <!-- PAGE HEADER -->
+  <div class="page-header">
+    <div class="breadcrumb">
+      <a href="index.html">Home</a>
+      <span class="sep">›</span>
+      <span class="current">Contact</span>
+    </div>
+    <h1>Get in <span>Touch</span></h1>
+    <p>Questions or complaints? Reach out directly.</p>
+  </div>
+
+  <!-- MAIN CONTENT -->
+  <div class="contact-page-wrap">
+
+    <!-- LEFT COLUMN -->
+    <div class="contact-left">
+
+      <!-- Person Card -->
+      <div class="person-card">
+        <div class="person-card-header">
+          <div class="person-avatar">AL</div>
+          <div class="person-name-wrap">
+            <h3>Abukwe Lamati</h3>
+            <p>Founder &amp; Student Lead · BookBridge</p>
+          </div>
+        </div>
+        <div class="person-card-body">
+
+          <a href="mailto:abukwe.lamati@bookbridge.co.za" class="contact-detail-row">
+            <div class="detail-icon-wrap">✉️</div>
+            <div class="detail-text-wrap">
+              <div class="detail-label">Email</div>
+              <div class="detail-value">abukwe.lamati@bookbridge.co.za</div>
+            </div>
+          </a>
+
+          <a href="tel:+27123456789" class="contact-detail-row">
+            <div class="detail-icon-wrap">📞</div>
+            <div class="detail-text-wrap">
+              <div class="detail-label">Phone</div>
+              <div class="detail-value">+27 123 456 789</div>
+            </div>
+          </a>
+
+        </div>
+      </div>
+
+      <!-- Social Links -->
+      <div class="social-section">
+        <div class="social-section-header">
+          <h3>Find us online</h3>
+          <p>Follow BookBridge for updates, deals &amp; new listings</p>
+        </div>
+        <div class="social-links-grid">
+
+          <a href="#" class="social-link-row linkedin" aria-label="LinkedIn">
+            <div class="social-icon-wrap" style="background:#0077B5;">
+              <!-- LinkedIn icon -->
+              <svg width="18" height="18" viewBox="0 0 24 24" fill="white" xmlns="http://www.w3.org/2000/svg">
+                <path d="M16 8a6 6 0 0 1 6 6v7h-4v-7a2 2 0 0 0-2-2 2 2 0 0 0-2 2v7h-4v-7a6 6 0 0 1 6-6z"/>
+                <rect x="2" y="9" width="4" height="12"/>
+                <circle cx="4" cy="4" r="2"/>
+              </svg>
+            </div>
+            <span class="social-platform-name">LinkedIn</span>
+            <span class="social-handle">abukwe-lamati</span>
+          </a>
+
+          <a href="#" class="social-link-row instagram" aria-label="Instagram">
+            <div class="social-icon-wrap" style="background: linear-gradient(45deg,#f09433,#e6683c,#dc2743,#cc2366,#bc1888);">
+              <!-- Instagram icon -->
+              <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="white" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" xmlns="http://www.w3.org/2000/svg">
+                <rect x="2" y="2" width="20" height="20" rx="5" ry="5"/>
+                <path d="M16 11.37A4 4 0 1 1 12.63 8 4 4 0 0 1 16 11.37z"/>
+                <line x1="17.5" y1="6.5" x2="17.51" y2="6.5"/>
+              </svg>
+            </div>
+            <span class="social-platform-name">Instagram</span>
+            <span class="social-handle">@bookbridge_sa</span>
+          </a>
+
+          <a href="#" class="social-link-row tiktok" aria-label="TikTok">
+            <div class="social-icon-wrap" style="background:#010101;">
+              <!-- TikTok icon (simplified) -->
+              <svg width="18" height="18" viewBox="0 0 24 24" fill="white" xmlns="http://www.w3.org/2000/svg">
+                <path d="M19.59 6.69a4.83 4.83 0 0 1-3.77-4.25V2h-3.45v13.67a2.89 2.89 0 0 1-2.88 2.5 2.89 2.89 0 0 1-2.89-2.89 2.89 2.89 0 0 1 2.89-2.89c.28 0 .54.04.79.1V9.01a6.33 6.33 0 0 0-.79-.05 6.34 6.34 0 0 0-6.34 6.34 6.34 6.34 0 0 0 6.34 6.34 6.34 6.34 0 0 0 6.33-6.34V8.72a8.18 8.18 0 0 0 4.78 1.52V6.79a4.85 4.85 0 0 1-1.01-.1z"/>
+              </svg>
+            </div>
+            <span class="social-platform-name">TikTok</span>
+            <span class="social-handle">@bookbridge_sa</span>
+          </a>
+
+          <a href="#" class="social-link-row twitter" aria-label="X (Twitter)">
+            <div class="social-icon-wrap" style="background:#000000;">
+              <!-- X / Twitter icon -->
+              <svg width="17" height="17" viewBox="0 0 24 24" fill="white" xmlns="http://www.w3.org/2000/svg">
+                <path d="M18.244 2.25h3.308l-7.227 8.26 8.502 11.24H16.17l-5.214-6.817L4.99 21.75H1.68l7.73-8.835L1.254 2.25H8.08l4.713 6.231zm-1.161 17.52h1.833L7.084 4.126H5.117z"/>
+              </svg>
+            </div>
+            <span class="social-platform-name">X (Twitter)</span>
+            <span class="social-handle">@bookbridge_sa</span>
+          </a>
+
+        </div>
+      </div>
+
+    </div><!-- /contact-left -->
+
+    <!-- RIGHT COLUMN -->
+    <div class="contact-right">
+
+      <!-- FAQ -->
+      <div class="faq-section">
+        <div class="faq-section-header">
+          <h3>Frequently Asked Questions</h3>
+          <p>Quick answers to the most common queries</p>
+        </div>
+        <div class="faq-list">
+
+          <div class="faq-item">
+            <button class="faq-question" onclick="toggleFaq(this)" aria-expanded="false">
+              How do I sell my books?
+              <span class="faq-chevron">▼</span>
+            </button>
+            <div class="faq-answer">
+              <p>Click the <strong>"Sell your books"</strong> button on the homepage and fill out the form. We'll review your listing and have it live within 24 hours.</p>
+            </div>
+          </div>
+
+          <div class="faq-item">
+            <button class="faq-question" onclick="toggleFaq(this)" aria-expanded="false">
+              Is BookBridge only for UCT students?
+              <span class="faq-chevron">▼</span>
+            </button>
+            <div class="faq-answer">
+              <p>Currently yes, but we plan to expand to all South African universities. Stay tuned — more campuses are coming soon!</p>
+            </div>
+          </div>
+
+          <div class="faq-item">
+            <button class="faq-question" onclick="toggleFaq(this)" aria-expanded="false">
+              How are textbook conditions rated?
+              <span class="faq-chevron">▼</span>
+            </button>
+            <div class="faq-answer">
+              <p><strong>Like New</strong> — minimal use, looks almost brand new. <strong>Good</strong> — some wear but well-maintained. <strong>Acceptable</strong> — visibly used but fully readable and complete.</p>
+            </div>
+          </div>
+
+        </div>
+      </div>
+
+      <!-- Response notice -->
+      <div class="response-notice">
+        <div class="response-notice-icon">⏱️</div>
+        <div>
+          <h4>Response time</h4>
+          <p>We typically reply within <strong>24 hours</strong> on weekdays. For urgent matters, WhatsApp or Instagram DMs are the fastest way to reach us.</p>
+        </div>
+      </div>
+
+    </div><!-- /contact-right -->
+
+  </div><!-- /contact-page-wrap -->
+
+  <!-- FOOTER -->
+  <footer class="footer">
+    <p>&#169; 2025 BookBridge &middot; Made with &#10084;&#65039; for South African students &middot;
+      <a href="about.html">Our Story</a> &middot; <a href="contact.html">Contact</a></p>
+  </footer>
+
+  <script>
+    /* ── SCROLL REVEAL ── */
+    const observer = new IntersectionObserver((entries) => {
+      entries.forEach(e => {
+        if (e.isIntersecting) {
+          e.target.classList.add('visible');
+          observer.unobserve(e.target);
+        }
+      });
+    }, { threshold: 0.08 });
+
+    document.querySelectorAll('.person-card, .social-section, .faq-section, .response-notice')
+      .forEach(el => observer.observe(el));
+
+    /* ── FAQ ACCORDION ── */
+    function toggleFaq(btn) {
+      const answer = btn.nextElementSibling;
+      const isOpen = btn.classList.contains('open');
+
+      // Close all
+      document.querySelectorAll('.faq-question').forEach(q => {
+        q.classList.remove('open');
+        q.setAttribute('aria-expanded', 'false');
+        q.nextElementSibling.classList.remove('open');
+      });
+
+      // Open clicked (unless it was already open)
+      if (!isOpen) {
+        btn.classList.add('open');
+        btn.setAttribute('aria-expanded', 'true');
+        answer.classList.add('open');
+      }
+    }
+  </script>
+
+</body>
+</html>

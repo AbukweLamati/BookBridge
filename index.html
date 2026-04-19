@@ -1,0 +1,402 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>BookBridge — Affordable Textbooks for SA Students</title>
+  <link href="https://fonts.googleapis.com/css2?family=Lora:wght@700&family=Poppins:wght@400;600&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+  <!-- NAVBAR -->
+  <nav class="navbar">
+    <a href="index.html" class="logo">Book<span>Bridge</span></a>
+    <ul class="nav-links">
+      <li><a href="index.html" class="active">Home</a></li>
+      <li class="nav-dropdown">
+        <a href="past-papers.html">Past Papers ▾</a>
+        <div class="dropdown-menu">
+          <div class="dropdown-faculty">
+            <a href="past-papers.html?fac=health">🏥 Health Sciences <span>›</span></a>
+            <div class="sub-menu">
+              <a href="past-papers.html?fac=health&sub=Medicine">Medicine</a>
+              <a href="past-papers.html?fac=health&sub=Nursing">Nursing</a>
+              <a href="past-papers.html?fac=health&sub=Pharmacy">Pharmacy</a>
+            </div>
+          </div>
+          <div class="dropdown-faculty">
+            <a href="past-papers.html?fac=science">🔬 Science <span>›</span></a>
+            <div class="sub-menu">
+              <a href="past-papers.html?fac=science&sub=Biology">Biology</a>
+              <a href="past-papers.html?fac=science&sub=Chemistry">Chemistry</a>
+              <a href="past-papers.html?fac=science&sub=Physics">Physics</a>
+            </div>
+          </div>
+          <div class="dropdown-faculty">
+            <a href="past-papers.html?fac=commerce">💰 Commerce <span>›</span></a>
+            <div class="sub-menu">
+              <a href="past-papers.html?fac=commerce&sub=Accounting">Accounting</a>
+              <a href="past-papers.html?fac=commerce&sub=Finance">Finance</a>
+              <a href="past-papers.html?fac=commerce&sub=Economics">Economics</a>
+            </div>
+          </div>
+          <div class="dropdown-faculty">
+            <a href="past-papers.html?fac=humanities">🏛️ Humanities <span>›</span></a>
+            <div class="sub-menu">
+              <a href="past-papers.html?fac=humanities&sub=Psychology">Psychology</a>
+              <a href="past-papers.html?fac=humanities&sub=Philosophy">Philosophy</a>
+              <a href="past-papers.html?fac=humanities&sub=History">History</a>
+            </div>
+          </div>
+          <div class="dropdown-faculty">
+            <a href="past-papers.html?fac=engineering">⚙️ Engineering <span>›</span></a>
+            <div class="sub-menu">
+              <a href="past-papers.html?fac=engineering&sub=Mechanical">Mechanical</a>
+              <a href="past-papers.html?fac=engineering&sub=Electrical">Electrical</a>
+              <a href="past-papers.html?fac=engineering&sub=Civil">Civil</a>
+            </div>
+          </div>
+          <div class="dropdown-faculty">
+            <a href="past-papers.html?fac=law">⚖️ Law <span>›</span></a>
+            <div class="sub-menu">
+              <a href="past-papers.html?fac=law&sub=Constitutional Law">Constitutional</a>
+              <a href="past-papers.html?fac=law&sub=Commercial Law">Commercial</a>
+              <a href="past-papers.html?fac=law&sub=Criminal Law">Criminal</a>
+            </div>
+          </div>
+        </div>
+      </li>
+      <li class="nav-dropdown">
+        <a href="#">Faculties ▾</a>
+        <div class="dropdown-menu">
+          <div class="dropdown-faculty"><a href="faculty health.html">🏥 Health Sciences</a></div>
+          <div class="dropdown-faculty"><a href="faculty science.html">🔬 Science</a></div>
+          <div class="dropdown-faculty"><a href="faculty commerce.html">💰 Commerce</a></div>
+          <div class="dropdown-faculty"><a href="faculty humanities.html">🏛️ Humanities</a></div>
+          <div class="dropdown-faculty"><a href="faculty EBE.html">⚙️ Engineering</a></div>
+          <div class="dropdown-faculty"><a href="faculty law.html">⚖️ Law</a></div>
+        </div>
+      </li>
+      <li><a href="testimonals.html">Testimonials</a></li>
+      <li><a href="about.html">About Us</a></li>
+      <li><a href="contact.html">Contact</a></li>
+      <li>
+        <input type="text" class="nav-search" placeholder="Search by module code..."
+          onkeydown="if(event.key==='Enter'&&this.value){window.location='shop.html?q='+encodeURIComponent(this.value);}">
+      </li>
+      <li><a href="wishlist.html" class="nav-icon">&#9825;</a></li>
+      <li><a href="cart.html" class="nav-icon">&#128722;</a></li>
+    </ul>
+  </nav>
+
+  <!-- HERO SECTION -->
+  <section class="hero">
+    <div class="hero-bg"></div>
+    <div class="hero-overlay"></div>
+    <div class="hero-content">
+      <h1>Education made possible</h1>
+      <p>Affordable second-hand textbooks for all South African students — buy, sell, save.</p>
+      <div class="hero-btns">
+        <a href="shop.html" class="btn-main">Browse books</a>
+        <!-- UPDATED: now links to sell.html -->
+        <a href="sell.html" class="btn-main">Sell your books</a>
+        
+      </div>
+      <div class="stats-row">
+        <div class="stat-card">
+          <div class="stat-number">200+</div>
+          <div class="stat-label">Student Customers</div>
+        </div>
+        <div class="stat-card">
+          <div class="stat-number">50+</div>
+          <div class="stat-label">Past Papers offered</div>
+        </div>
+        <div class="stat-card">
+          <div class="stat-number olive">R450</div>
+          <div class="stat-label">Avg. amount saved</div>
+        </div>
+        <div class="stat-card">
+          <div class="stat-number">6</div>
+          <div class="stat-label">Faculties covered</div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- FACULTY SECTION -->
+  <section class="faculty-section">
+    <h2 class="section-title reveal">Shop by faculty</h2>
+    <p class="section-subtitle reveal reveal-delay-1">Find textbooks organised by your faculty and module code</p>
+
+    <div class="faculty-grid">
+      <a href="faculty health.html" class="faculty-card reveal reveal-delay-1">
+        <div class="faculty-img">
+          <img src="images/Health Science Faculty.jpg" alt="Health Sciences faculty"
+            onerror="this.src='https://placehold.co/400x200/f5f0e8/c1440e?text=Health+Sciences'">
+        </div>
+        <div class="faculty-info">
+          <h3 class="faculty-name">Health Sciences faculty</h3>
+          <p class="faculty-desc">Medicine, Nursing, Pharmacy, Physiotherapy</p>
+        </div>
+        <div class="faculty-btn">Shop now</div>
+      </a>
+
+      <a href="faculty science.html" class="faculty-card reveal reveal-delay-2">
+        <div class="faculty-img">
+          <img src="images/Science Faculty.jpg" alt="Science faculty"
+            onerror="this.src='https://placehold.co/400x200/f5f0e8/c1440e?text=Science'">
+        </div>
+        <div class="faculty-info">
+          <h3 class="faculty-name">Science faculty</h3>
+          <p class="faculty-desc">Biology, Chemistry, Physics, Geography</p>
+        </div>
+        <div class="faculty-btn">Shop now</div>
+      </a>
+
+      <a href="faculty commerce.html" class="faculty-card reveal reveal-delay-3">
+        <div class="faculty-img">
+          <img src="images/Commerce Faculty.jpg" alt="Commerce faculty"
+            onerror="this.src='https://placehold.co/400x200/f5f0e8/c1440e?text=Commerce'">
+        </div>
+        <div class="faculty-info">
+          <h3 class="faculty-name">Commerce faculty</h3>
+          <p class="faculty-desc"> Accounting,  Finance, Economics, Law</p>
+        </div>
+        <div class="faculty-btn">Shop now</div>
+      </a>
+
+      <a href="faculty humanities.html" class="faculty-card reveal reveal-delay-1">
+        <div class="faculty-img">
+          <img src="images/Humanities Faculty.jpg" alt="Humanities faculty"
+            onerror="this.src='https://placehold.co/400x200/f5f0e8/c1440e?text=Humanities'">
+        </div>
+        <div class="faculty-info">
+          <h3 class="faculty-name">Humanities faculty</h3>
+          <p class="faculty-desc">Psychology, Sociology, Philosophy, History</p>
+        </div>
+        <div class="faculty-btn">Shop now</div>
+      </a>
+
+      <a href="faculty EBE.html" class="faculty-card reveal reveal-delay-2">
+        <div class="faculty-img">
+          <img src="images/Engineering Faculty.jpg" alt="Engineering faculty"
+            onerror="this.src='https://placehold.co/400x200/f5f0e8/c1440e?text=Engineering'">
+        </div>
+        <div class="faculty-info">
+          <h3 class="faculty-name">Engineering faculty</h3>
+          <p class="faculty-desc">Mechanical, Electrical, Civil, Computer</p>
+        </div>
+        <div class="faculty-btn">Shop now</div>
+      </a>
+
+      <a href="faculty law.html" class="faculty-card reveal reveal-delay-3">
+        <div class="faculty-img">
+          <img src="images/Law Faculty.jpg" alt="Law faculty"
+            onerror="this.src='https://placehold.co/400x200/f5f0e8/c1440e?text=Law'">
+        </div>
+        <div class="faculty-info">
+          <h3 class="faculty-name">Law faculty</h3>
+          <p class="faculty-desc">Constitutional, Commercial, Criminal Law</p>
+        </div>
+        <div class="faculty-btn">Shop now</div>
+      </a>
+    </div>
+
+    <!-- CTA row: View all + Request -->
+    <div class="section-cta reveal" style="display:flex;gap:14px;justify-content:center;align-items:center;flex-wrap:wrap;">
+      <a href="shop.html" class="btn-outline-dark">View all books</a>
+      <button class="btn-request" onclick="openRequestModal()">Request a Textbook </button>
+    </div>
+  </section>
+
+  <!-- HOW IT WORKS -->
+  <section style="padding:60px 40px;background:#1C1C1C;text-align:center;">
+    <h2 class="section-title reveal" style="color:white;">How BookBridge works</h2>
+    <p class="section-subtitle reveal reveal-delay-1" style="color:#888;">Three steps to a more affordable semester</p>
+    <div style="display:grid;grid-template-columns:repeat(3,1fr);gap:32px;max-width:900px;margin:32px auto 0;" class="reveal">
+      <div style="text-align:center;padding:28px 20px;">
+        <div style="font-size:2.5rem;margin-bottom:16px;"></div>
+        <h3 style="font-family:'Lora',serif;font-size:16px;color:white;margin-bottom:8px;">Find your book</h3>
+        <p style="font-size:13px;color:#888;line-height:1.7;">Search by module code, filter by faculty and condition, read previous owner reviews.</p>
+      </div>
+      <div style="text-align:center;padding:28px 20px;">
+        <div style="font-size:2.5rem;margin-bottom:16px;"></div>
+        <h3 style="font-family:'Lora',serif;font-size:16px;color:white;margin-bottom:8px;">Contact the seller</h3>
+        <p style="font-size:13px;color:#888;line-height:1.7;">Connect directly with the student seller. Meet on campus, no shipping hassles.</p>
+      </div>
+      <div style="text-align:center;padding:28px 20px;">
+        <div style="font-size:2.5rem;margin-bottom:16px;"></div>
+        <h3 style="font-family:'Lora',serif;font-size:16px;color:white;margin-bottom:8px;">Save &amp; succeed</h3>
+        <p style="font-size:13px;color:#888;line-height:1.7;">Save hundreds of rands and get the books you need before the semester starts.</p>
+      </div>
+    </div>
+    <div style="margin-top:36px;" class="reveal">
+      <a href="about.html" class="btn-outline">Read our story</a>
+    </div>
+  </section>
+
+  <footer class="footer">
+    <p>&#169; 2025 BookBridge &middot; Made with &#10084;&#65039; for South African students &middot;
+      <a href="about.html">Our Story</a> &middot; <a href="contact.html">Contact</a></p>
+  </footer>
+
+
+  <!-- ═══════════════════════════════════════
+       REQUEST TEXTBOOK MODAL
+  ═══════════════════════════════════════ -->
+  <div class="req-modal-overlay" id="reqModal" onclick="handleReqOverlayClick(event)">
+    <div class="req-modal-box">
+
+      <div class="req-modal-header">
+        <div>
+          <h2>Request a Textbook &#128221;</h2>
+          <p>Can't find what you need? Submit a request and we'll notify you when it's listed.</p>
+        </div>
+        <button class="req-modal-close" onclick="closeRequestModal()" aria-label="Close">&#10005;</button>
+      </div>
+
+      <div class="req-modal-body">
+
+        <div class="form-row-2">
+          <div class="form-group">
+            <label>Full Name <span class="req-star">*</span></label>
+            <input type="text" id="req-name" placeholder="e.g. Sipho Nkosi">
+          </div>
+          <div class="form-group">
+            <label>Student Email <span class="req-star">*</span></label>
+            <input type="email" id="req-email" placeholder="e.g. NKSSI001@myuct.ac.za">
+          </div>
+        </div>
+
+        <div class="form-row-2">
+          <div class="form-group">
+            <label>Module Code <span class="req-star">*</span></label>
+            <input type="text" id="req-module" placeholder="e.g. MAM1000W">
+          </div>
+          <div class="form-group">
+            <label>Faculty <span class="req-star">*</span></label>
+            <select id="req-faculty">
+              <option value="" disabled selected>Select faculty...</option>
+              <option>Health Sciences</option>
+              <option>Science</option>
+              <option>Commerce</option>
+              <option>Humanities</option>
+              <option>Engineering</option>
+              <option>Law</option>
+            </select>
+          </div>
+        </div>
+
+        <div class="form-row-2">
+          <div class="form-group">
+            <label>Book Title <span class="req-star">*</span></label>
+            <input type="text" id="req-title" placeholder="e.g. Calculus: Early Transcendentals">
+          </div>
+          <div class="form-group">
+            <label>Author</label>
+            <input type="text" id="req-author" placeholder="e.g. James Stewart">
+          </div>
+        </div>
+
+        <div class="form-group">
+          <label>Course / Degree</label>
+          <input type="text" id="req-course" placeholder="e.g. BSc Mathematics, 2nd year">
+        </div>
+
+        <div class="form-group">
+          <label>Urgency Level <span class="req-star">*</span></label>
+          <div class="urgency-group">
+            <span class="urgency-chip" onclick="selectUrgency(this)">&#128994; Not urgent</span>
+            <span class="urgency-chip selected" onclick="selectUrgency(this)">&#128993; Need soon</span>
+            <span class="urgency-chip" onclick="selectUrgency(this)">&#128308; Urgent</span>
+          </div>
+        </div>
+
+        <div class="form-group">
+          <label>Additional comments</label>
+          <textarea id="req-comments" placeholder="Any specific edition? Willing to pay a certain price range?"></textarea>
+        </div>
+
+      </div><!-- /req-modal-body -->
+
+      <div class="req-modal-footer">
+        <button class="btn-main" style="margin:0;flex-shrink:0;" onclick="submitRequest(event)">
+          Submit Request
+        </button>
+        <p class="note">We'll email you as soon as a matching book is listed. No spam, ever.</p>
+      </div>
+
+    </div>
+  </div>
+
+
+  <script>
+    /* ── SCROLL REVEAL ── */
+    const revealObserver = new IntersectionObserver((entries) => {
+      entries.forEach(e => {
+        if (e.isIntersecting) {
+          e.target.classList.add('visible');
+          revealObserver.unobserve(e.target);
+        }
+      });
+    }, { threshold: 0.1 });
+    document.querySelectorAll('.reveal').forEach(el => revealObserver.observe(el));
+
+    /* ── MODAL OPEN / CLOSE ── */
+    function openRequestModal() {
+      document.getElementById('reqModal').classList.add('open');
+      document.body.style.overflow = 'hidden';
+    }
+
+    function closeRequestModal() {
+      document.getElementById('reqModal').classList.remove('open');
+      document.body.style.overflow = '';
+    }
+
+    function handleReqOverlayClick(e) {
+      if (e.target === document.getElementById('reqModal')) closeRequestModal();
+    }
+
+    document.addEventListener('keydown', function(e) {
+      if (e.key === 'Escape') closeRequestModal();
+    });
+
+    /* ── URGENCY CHIPS ── */
+    function selectUrgency(el) {
+      document.querySelectorAll('.urgency-chip').forEach(c => c.classList.remove('selected'));
+      el.classList.add('selected');
+    }
+
+    /* ── SUBMIT REQUEST ── */
+    function submitRequest(e) {
+      const btn    = e.target;
+      const name   = document.getElementById('req-name').value.trim();
+      const email  = document.getElementById('req-email').value.trim();
+      const module = document.getElementById('req-module').value.trim();
+      const title  = document.getElementById('req-title').value.trim();
+      const fac    = document.getElementById('req-faculty').value;
+
+      if (!name || !email || !module || !title || !fac) {
+        // Shake the button as visual feedback for missing fields
+        btn.style.transition = 'transform 0.08s ease';
+        ['-5px','5px','-4px','4px','0px'].forEach((x, i) =>
+          setTimeout(() => btn.style.transform = `translateX(${x})`, i * 80)
+        );
+        return;
+      }
+
+      closeRequestModal();
+      setTimeout(() => {
+        alert(
+          'Request submitted!\n\n' +
+          'Book: "' + title + '"\n' +
+          'Module: ' + module + ' \u00B7 ' + fac + '\n\n' +
+          'We\'ll email ' + email + ' as soon as a matching book is listed.'
+        );
+      }, 250);
+    }
+  </script>
+
+</body>
+</html>

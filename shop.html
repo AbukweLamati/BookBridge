@@ -1,0 +1,257 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>All Books — BookBridge</title>
+  <link href="https://fonts.googleapis.com/css2?family=Lora:wght@700&family=Poppins:wght@400;600&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+  <nav class="navbar">
+    <a href="index.html" class="logo">Book<span>Bridge</span></a>
+    <ul class="nav-links">
+      <li><a href="index.html">Home</a></li>
+      <li class="nav-dropdown">
+        <a href="#">Past Papers ▾</a>
+        <div class="dropdown-menu">
+          <div class="dropdown-faculty">
+            <a href="past-papers.html?fac=health">🏥 Health Sciences <span>›</span></a>
+            <div class="sub-menu">
+              <a href="past-papers.html?fac=health&sub=Medicine">Medicine</a>
+              <a href="past-papers.html?fac=health&sub=Nursing">Nursing</a>
+              <a href="past-papers.html?fac=health&sub=Pharmacy">Pharmacy</a>
+            </div>
+          </div>
+          <div class="dropdown-faculty">
+            <a href="past-papers.html?fac=science">🔬 Science <span>›</span></a>
+            <div class="sub-menu">
+              <a href="past-papers.html?fac=science&sub=Biology">Biology</a>
+              <a href="past-papers.html?fac=science&sub=Chemistry">Chemistry</a>
+              <a href="past-papers.html?fac=science&sub=Physics">Physics</a>
+            </div>
+          </div>
+          <div class="dropdown-faculty">
+            <a href="past-papers.html?fac=commerce">💰 Commerce <span>›</span></a>
+            <div class="sub-menu">
+              <a href="past-papers.html?fac=commerce&sub=Accounting">Accounting</a>
+              <a href="past-papers.html?fac=commerce&sub=Finance">Finance</a>
+              <a href="past-papers.html?fac=commerce&sub=Economics">Economics</a>
+            </div>
+          </div>
+          <div class="dropdown-faculty">
+            <a href="past-papers.html?fac=humanities">🏛️ Humanities <span>›</span></a>
+            <div class="sub-menu">
+              <a href="past-papers.html?fac=humanities&sub=Psychology">Psychology</a>
+              <a href="past-papers.html?fac=humanities&sub=Philosophy">Philosophy</a>
+              <a href="past-papers.html?fac=humanities&sub=History">History</a>
+            </div>
+          </div>
+          <div class="dropdown-faculty">
+            <a href="past-papers.html?fac=engineering">⚙️ Engineering <span>›</span></a>
+            <div class="sub-menu">
+              <a href="past-papers.html?fac=engineering&sub=Mechanical">Mechanical</a>
+              <a href="past-papers.html?fac=engineering&sub=Electrical">Electrical</a>
+              <a href="past-papers.html?fac=engineering&sub=Civil">Civil</a>
+            </div>
+          </div>
+          <div class="dropdown-faculty">
+            <a href="past-papers.html?fac=law">⚖️ Law <span>›</span></a>
+            <div class="sub-menu">
+              <a href="past-papers.html?fac=law&sub=Constitutional Law">Constitutional</a>
+              <a href="past-papers.html?fac=law&sub=Commercial Law">Commercial</a>
+              <a href="past-papers.html?fac=law&sub=Criminal Law">Criminal</a>
+            </div>
+          </div>
+        </div>
+      </li>
+      <li class="nav-dropdown">
+        <a href="#">Faculties ▾</a>
+        <div class="dropdown-menu">
+          <div class="dropdown-faculty"><a href="faculty-health.html">🏥 Health Sciences</a></div>
+          <div class="dropdown-faculty"><a href="faculty-science.html">🔬 Science</a></div>
+          <div class="dropdown-faculty"><a href="faculty-commerce.html">💰 Commerce</a></div>
+          <div class="dropdown-faculty"><a href="faculty-humanities.html">🏛️ Humanities</a></div>
+          <div class="dropdown-faculty"><a href="faculty-engineering.html">⚙️ Engineering</a></div>
+          <div class="dropdown-faculty"><a href="faculty-law.html">⚖️ Law</a></div>
+        </div>
+      </li>
+      <li><a href="testimonials.html">Testimonials</a></li>
+      <li><a href="about.html">About Us</a></li>
+      <li><a href="contact.html">Contact</a></li>
+      <li><div class="nav-right"><input type="text" class="nav-search" placeholder="Search by module code..." oninput="searchBooks(this.value)"></div></li>
+      <li><a href="#" class="nav-icon">♡</a></li>
+      <li><a href="cart.html" class="nav-icon">🛒</a></li>
+    </ul>
+  </nav>
+
+  <div class="page-header">
+    <div class="breadcrumb">
+      <a href="index.html">Home</a>
+      <span class="sep">›</span>
+      <span class="current">All Books</span>
+    </div>
+    <h1>All <span>Books</span></h1>
+    <p>Browse all available textbooks across every faculty — filter, search, and save.</p>
+  </div>
+
+  <div class="filter-bar">
+    <input type="text" class="filter-search" id="searchInput" placeholder="Search by title or module code..." oninput="searchBooks(this.value)">
+    <select class="filter-select" id="facultyFilter" onchange="applyFilters()">
+      <option value="all">All Faculties</option>
+      <option value="Health Sciences">Health Sciences</option>
+      <option value="Science">Science</option>
+      <option value="Commerce">Commerce</option>
+      <option value="Humanities">Humanities</option>
+      <option value="Engineering">Engineering</option>
+      <option value="Law">Law</option>
+    </select>
+    <select class="filter-select" id="priceFilter" onchange="applyFilters()">
+      <option value="all">All Prices</option>
+      <option value="under300">Under R300</option>
+      <option value="300-500">R300 – R500</option>
+      <option value="500-800">R500 – R800</option>
+      <option value="800plus">R800+</option>
+    </select>
+    <select class="filter-select" id="conditionFilter" onchange="applyFilters()">
+      <option value="all">All Conditions</option>
+      <option value="Like New">Like New</option>
+      <option value="Good">Good</option>
+      <option value="Acceptable">Acceptable</option>
+    </select>
+    <select class="filter-select" id="sortFilter" onchange="applyFilters()">
+      <option value="default">Sort by</option>
+      <option value="price-asc">Price: Low to High</option>
+      <option value="price-desc">Price: High to Low</option>
+    </select>
+  </div>
+
+  <div style="padding: 28px 32px; background: #F8F8F6; min-height: 60vh;">
+    <div style="display:flex; justify-content:space-between; align-items:center; margin-bottom:20px;">
+      <div>
+        <div class="content-title" style="font-family:'Lora',serif;font-size:20px;color:#1C1C1C;margin-bottom:3px;">All Textbooks</div>
+        <div class="content-sub" id="resultCount" style="font-size:12px;color:#888;">Showing all books</div>
+      </div>
+    </div>
+    <div id="booksGrid" class="faculty-grid" style="grid-template-columns: repeat(auto-fill, minmax(260px, 1fr)); gap:20px;"></div>
+  </div>
+
+  <footer class="footer">
+    <p>© 2025 BookBridge · Made with ❤️ for South African students · <a href="about.html">Our Story</a></p>
+  </footer>
+
+  <script>
+    const ALL_BOOKS = [
+      // Health Sciences
+      { code:'ANA1005F', title:'Gray\'s Anatomy for Students', faculty:'Health Sciences', condition:'Like New', price:680, seller:'Aisha K., 3rd year Med', review:'Used for one semester only — still has the spine sticker. Pages are pristine.', img:'' },
+      { code:'MBB2010S', title:'Robbins Pathology', faculty:'Health Sciences', condition:'Good', price:520, seller:'Thabo M., 4th year', review:'Highlighted a few chapters. The highlights are actually helpful for exams!', img:'' },
+      { code:'PHL1001F', title:'Pharmacology Principles', faculty:'Health Sciences', condition:'Acceptable', price:310, seller:'Nomsa D., 2nd year', review:'Has some annotations in pencil. Content fully readable throughout.', img:'' },
+      { code:'NUR1010W', title:'Fundamentals of Nursing', faculty:'Health Sciences', condition:'Good', price:290, seller:'Lena V., graduated', review:'Carried this for 3 years. A few dog-ears but nothing falls out.', img:'' },
+      // Science
+      { code:'MAM1000W', title:'Calculus: Early Transcendentals', faculty:'Science', condition:'Good', price:450, seller:'Sipho N., 2nd year', review:'A lifesaver for MAM1. Worked through all the practice sets — great prep.', img:'' },
+      { code:'CHM1000F', title:'Chemistry: Central Science', faculty:'Science', condition:'Like New', price:600, seller:'Priya R., graduated', review:'Bought two copies, selling the extra. Brand new condition.', img:'' },
+      { code:'PHY1012S', title:'University Physics Vol. 1', faculty:'Science', condition:'Good', price:380, seller:'Keegan T., 2nd year', review:'A couple of post-it notes still inside — good study notes included!', img:'' },
+      { code:'GEO1001F', title:'Physical Geography Today', faculty:'Science', condition:'Acceptable', price:255, seller:'Zanele M., 3rd year', review:'Cover is worn but all pages intact. Excellent value.', img:'' },
+      { code:'CSC1015F', title:'Introduction to Programming in Java', faculty:'Science', condition:'Like New', price:420, seller:'Dev P., 2nd year', review:'Only used for one semester before switching to Python. Great condition.', img:'' },
+      // Commerce
+      { code:'ECO1010F', title:'Principles of Microeconomics', faculty:'Commerce', condition:'Good', price:340, seller:'Yusuf A., 3rd year', review:'Covered the entire ECO1010 syllabus. My notes are in the margins — very useful.', img:'' },
+      { code:'ACC1006W', title:'Financial Accounting', faculty:'Commerce', condition:'Like New', price:490, seller:'Chloe B., 2nd year', review:'Barely used — I relied on lecture slides. Still in perfect condition.', img:'' },
+      { code:'BUS1010F', title:'Business Ethics in SA Context', faculty:'Commerce', condition:'Good', price:280, seller:'Tumi K., graduated', review:'Highlighted the case studies. Really helped for the essays.', img:'' },
+      { code:'FIN2020S', title:'Corporate Finance (Ross)', faculty:'Commerce', condition:'Acceptable', price:560, seller:'Liam S., 4th year', review:'Spine cracked but holds together. All 900 pages readable.', img:'' },
+      { code:'MKT1001F', title:'Marketing: An Introduction', faculty:'Commerce', condition:'Good', price:310, seller:'Amara J., 2nd year', review:'Used for one year. Includes printed lecture notes for the first 6 weeks.', img:'' },
+      // Humanities
+      { code:'PSY1004F', title:'Psychology: Themes & Variations', faculty:'Humanities', condition:'Like New', price:500, seller:'Ru C., 3rd year', review:'Dropped the course, book is immaculate. Your gain!', img:'' },
+      { code:'SOC1001F', title:'Sociology: A Brief Introduction', faculty:'Humanities', condition:'Good', price:270, seller:'Faith M., 2nd year', review:'Some highlighting in chapter 3. Makes the key concepts pop.', img:'' },
+      { code:'PHL1001F', title:'Ethics: Theory & Practice', faculty:'Humanities', condition:'Acceptable', price:250, seller:'Nico V., graduated', review:'Old edition but covers exactly the same syllabus. Verified with current students.', img:'' },
+      { code:'HIS2010S', title:'South African History Since 1910', faculty:'Humanities', condition:'Good', price:320, seller:'Bongi Z., 3rd year', review:'Very well written textbook. My underlines helped me ace the essay.', img:'' },
+      // Engineering
+      { code:'EEE3046W', title:'Signals & Systems', faculty:'Engineering', condition:'Good', price:650, seller:'Arjun P., 4th year', review:'This book is dense but essential. My worked examples in the margins save hours.', img:'' },
+      { code:'CIV2020F', title:'Structural Analysis 3rd Ed.', faculty:'Engineering', condition:'Like New', price:720, seller:'Monde T., 3rd year', review:'Got a PDF so selling the physical. Zero marks inside it.', img:'' },
+      { code:'MEC1010F', title:'Engineering Mechanics: Statics', faculty:'Engineering', condition:'Good', price:430, seller:'Alex W., 2nd year', review:'Solved most of the problems. Solutions help when you\'re stuck!', img:'' },
+      { code:'CSC2001F', title:'Data Structures & Algorithms', faculty:'Engineering', condition:'Acceptable', price:370, seller:'Sarah L., 3rd year', review:'Heavily annotated with pseudocode. Honestly makes it better.', img:'' },
+      // Law
+      { code:'LAW1010F', title:'Introduction to SA Law', faculty:'Law', condition:'Like New', price:580, seller:'Jade N., 2nd year', review:'Bought two — selling one. Perfect condition, current edition.', img:'' },
+      { code:'LAW2030S', title:'Constitutional Law of SA', faculty:'Law', condition:'Good', price:640, seller:'Khanya M., 3rd year', review:'Tabbed all the case law. Those tabs alone will save you hours in exams.', img:'' },
+      { code:'LAW3001F', title:'Law of Contract', faculty:'Law', condition:'Good', price:520, seller:'Matthew R., 4th year', review:'Critical for BLC. My notes cover all the leading cases.', img:'' },
+    ];
+
+    let filtered = [...ALL_BOOKS];
+
+    function conditionBadgeClass(cond) {
+      if (cond === 'Like New') return 'badge-new';
+      if (cond === 'Good') return 'badge-good';
+      return 'badge-acceptable';
+    }
+
+    function renderBooks(list) {
+      const grid = document.getElementById('booksGrid');
+      document.getElementById('resultCount').textContent = `Showing ${list.length} book${list.length !== 1 ? 's' : ''}`;
+      if (list.length === 0) {
+        grid.innerHTML = `<div class="empty" style="grid-column:1/-1;"><div class="empty-icon">📚</div><h3>No books found</h3><p>Try adjusting your filters.</p></div>`;
+        return;
+      }
+      grid.innerHTML = list.map((b, i) => `
+        <div class="book-card reveal reveal-delay-${(i % 4) + 1}">
+          <div class="book-thumb">
+            <img src="${b.img || `https://placehold.co/400x280/f5f0e8/c1440e?text=${encodeURIComponent(b.code)}`}" alt="${b.title}" loading="lazy">
+            <div class="book-badge-row">
+              <span class="badge badge-faculty">${b.faculty}</span>
+              <span class="badge ${conditionBadgeClass(b.condition)}">${b.condition}</span>
+            </div>
+          </div>
+          <div class="book-info">
+            <div class="book-code">${b.code}</div>
+            <div class="book-title">${b.title}</div>
+            <div class="book-review">"${b.review}"</div>
+            <div class="book-seller">Sold by: <span>${b.seller}</span></div>
+          </div>
+          <div class="book-price-row">
+            <div class="book-price">R${b.price}</div>
+            <button class="book-buy-btn" onclick="alert('Contact seller: ${b.seller}')">Buy Now</button>
+          </div>
+        </div>
+      `).join('');
+      initReveal();
+    }
+
+    function applyFilters() {
+      const faculty = document.getElementById('facultyFilter').value;
+      const price = document.getElementById('priceFilter').value;
+      const condition = document.getElementById('conditionFilter').value;
+      const sort = document.getElementById('sortFilter').value;
+      const search = document.getElementById('searchInput').value.toLowerCase();
+
+      let list = ALL_BOOKS.filter(b => {
+        if (faculty !== 'all' && b.faculty !== faculty) return false;
+        if (condition !== 'all' && b.condition !== condition) return false;
+        if (price === 'under300' && b.price >= 300) return false;
+        if (price === '300-500' && (b.price < 300 || b.price > 500)) return false;
+        if (price === '500-800' && (b.price < 500 || b.price > 800)) return false;
+        if (price === '800plus' && b.price < 800) return false;
+        if (search && !b.title.toLowerCase().includes(search) && !b.code.toLowerCase().includes(search)) return false;
+        return true;
+      });
+
+      if (sort === 'price-asc') list.sort((a,b) => a.price - b.price);
+      if (sort === 'price-desc') list.sort((a,b) => b.price - a.price);
+
+      renderBooks(list);
+    }
+
+    function searchBooks(val) {
+      document.getElementById('searchInput').value = val;
+      applyFilters();
+    }
+
+    function initReveal() {
+      const observer = new IntersectionObserver((entries) => {
+        entries.forEach(e => { if (e.isIntersecting) { e.target.classList.add('visible'); observer.unobserve(e.target); } });
+      }, { threshold: 0.1 });
+      document.querySelectorAll('.reveal').forEach(el => observer.observe(el));
+    }
+
+    renderBooks(ALL_BOOKS);
+  </script>
+</body>
+</html>
