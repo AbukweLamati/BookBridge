@@ -56,11 +56,11 @@
   <script src="script.js"></script>
   <script>
     var BOOKS = [
-      { id: "eng_1", code: "EEE3046W", img: "Images/Signals and Systems.png", title: "Signals & Systems", condition: "Good", price: 650, seller: "Arjun P., 4th year", review: "This book is dense but essential. My worked examples in the margins save hours.", faculty: "Engineering" },
-      { id: "eng_2", code: "CIV2020F", img: "Images/structural analysis 3rd edition.png", title: "Structural Analysis 3rd Ed.", condition: "Like New", price: 720, seller: "Monde T., 3rd year", review: "Got a PDF so selling the physical. Zero marks inside it.", faculty: "Engineering" },
-      { id: "eng_3", code: "MEC1010F", img: "Images/engineering mechanics(statistics).png", title: "Engineering Mechanics: Statics", condition: "Good", price: 430, seller: "Alex W., 2nd year", review: "Solved most of the problems. Solutions help when you are stuck!", faculty: "Engineering" },
-      { id: "eng_4", code: "CSC2001F", img: "Images/data structures & algorithms.png", title: "Data Structures & Algorithms", condition: "Like New", price: 500, seller: "Sibongile M., 3rd year", review: "Used for one semester before switching to Python. Still in perfect condition.", faculty: "Engineering" },
-      { id: "eng_5", code: "ELE1010F", img: "Images/Circuit Analysis.png", title: "Circuit Analysis: Theory & Practice", condition: "Acceptable", price: 300, seller: "Thabo K., graduated", review: "Some underlining but no notes. Still very usable.", faculty: "Engineering" }
+      { id: "eng_1", code: "EEE3046W", image: "Images/Signals and Systems.png", title: "Signals & Systems", condition: "Good", price: 650, seller: "Arjun P., 4th year", review: "This book is dense but essential. My worked examples in the margins save hours.", faculty: "Engineering" },
+      { id: "eng_2", code: "CIV2020F", image: "Images/structural analysis 3rd edition.png", title: "Structural Analysis 3rd Ed.", condition: "Like New", price: 720, seller: "Monde T., 3rd year", review: "Got a PDF so selling the physical. Zero marks inside it.", faculty: "Engineering" },
+      { id: "eng_3", code: "MEC1010F", image: "Images/engineering mechanics(statistics).png", title: "Engineering Mechanics: Statics", condition: "Good", price: 430, seller: "Alex W., 2nd year", review: "Solved most of the problems. Solutions help when you are stuck!", faculty: "Engineering" },
+      { id: "eng_4", code: "CSC2001F", image: "Images/data structures & algorithms.png", title: "Data Structures & Algorithms", condition: "Like New", price: 500, seller: "Sibongile M., 3rd year", review: "Used for one semester before switching to Python. Still in perfect condition.", faculty: "Engineering" },
+      { id: "eng_5", code: "ELE1010F", image: "Images/Circuit Analysis.png", title: "Circuit Analysis: Theory & Practice", condition: "Acceptable", price: 300, seller: "Thabo K., graduated", review: "Some underlining but no notes. Still very usable.", faculty: "Engineering" }
     ];
     
     var cf = 'all';
@@ -79,7 +79,7 @@
       return `
         <div class="book-card reveal reveal-delay-${(i % 4) + 1}">
           <div class="book-thumb">
-            <img src="${imgSrc}" alt="${b.title}" style="object-fit:cover; width:100%; height:100%;" onerror="this.src='images/past%20papers.png'">
+            <img src="${b.image}" alt="${b.title}" style="object-fit:cover; width:100%; height:100%;" onerror="this.src='https://placehold.co/400x280/f5f0e8/c1440e?text=${encodeURIComponent(b.code)}'">
             <div class="book-badge-row">
               <span class="badge badge-faculty">Engineering</span>
               <span class="badge ${cc(b.condition)}">${b.condition}</span>

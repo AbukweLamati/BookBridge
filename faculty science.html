@@ -72,14 +72,12 @@
   <script src="script.js"></script>
   <script>
     const BOOKS = [
-      { id:'sci_1', code:'MAM1000W','img':'Images/Calculus Early Transcedentals.png', title:'Calculus: Early Transcendentals', condition:'Good', price:450, seller:'Sipho N., 2nd year', review:'A lifesaver for MAM1. Worked through all the practice sets — great prep.', faculty:'Science' },
-      { id:'sci_2', code:'CHM1000F', 'img':'Images/Chemistry ;The Central Science.png', title:'Chemistry: The Central Science', condition:'Like New', price:600, seller:'Priya R., graduated', review:'Bought two copies, selling the extra. Brand new condition.', faculty:'Science' },
-      { id:'sci_3', code:'PHY1012S', 'img':'Images/University Physics.png', title:'University Physics Vol. 1', condition:'Good', price:380, seller:'Keegan T., 2nd year', review:'A couple of post-it notes still inside — good study notes included!', faculty:'Science' },
-      { id:'sci_4', code:'GEO1001F', 'img':'Images/Physical Geography.png', title:'Physical Geography Today', condition:'Acceptable', price:255, seller:'Zanele M., 3rd year', review:'Cover is worn but all pages intact. Excellent value.', faculty:'Science' },
-      { id:'sci_5', code:'CSC1015F', 'img':'Images/Intro to Programming in Java.png', title:'Introduction to Programming in Java', condition:'Like New', price:420, seller:'Dev P., 2nd year', review:'Only used for one semester before switching to Python.', faculty:'Science' },
-      { id:'sci_6', code:'BIO1000F', 'img':'Images/Cell Biology.png', title:'Campbell Biology 12th Ed.', condition:'Good', price:530, seller:'Amina S., 3rd year', review:'Comprehensive and well-maintained. Some notes in margins.', faculty:'Science' }
-
-    ];
+      { id:'sci_1', code:'MAM1000W',image:'Images/Calculus Early Transcedentals.png', title:'Calculus: Early Transcendentals', condition:'Good', price:450, seller:'Sipho N., 2nd year', review:'A lifesaver for MAM1. Worked through all the practice sets — great prep.', faculty:'Science' },
+      { id:'sci_2', code:'CHM1000F', image:'Images/Chemistry ;The Central Science.png', title:'Chemistry: The Central Science', condition:'Like New', price:600, seller:'Priya R., graduated', review:'Bought two copies, selling the extra. Brand new condition.', faculty:'Science' },
+      { id:'sci_3', code:'PHY1012S', image:'Images/University Physics.png', title:'University Physics Vol. 1', condition:'Good', price:380, seller:'Keegan T., 2nd year', review:'A couple of post-it notes still inside — good study notes included!', faculty:'Science' },
+      { id:'sci_4', code:'GEO1001F', image:'Images/Physical Geography.png', title:'Physical Geography Today', condition:'Acceptable', price:255, seller:'Zanele M., 3rd year', review:'Cover is worn but all pages intact. Excellent value.', faculty:'Science' },
+      { id:'sci_5', code:'CSC1015F', image:'Images/Intro to Programming in Java.png', title:'Introduction to Programming in Java', condition:'Like New', price:420, seller:'Dev P., 2nd year', review:'Only used for one semester before switching to Python.', faculty:'Science' },
+      { id:'sci_6', code:'BIO1000F', image:'Images/Cell Biology.png', title:'Campbell Biology 12th Ed.', condition:'Good', price:530, seller:'Amina S., 3rd year', review:'Some highlighting but no notes. Still in great condition.', faculty:'Science' }];
     let conditionFilter = 'all';
 
     function conditionClass(c) {
@@ -104,7 +102,7 @@
         html += `
           <div class="book-card reveal reveal-delay-${(i % 4) + 1}">
             <div class="book-thumb">
-              <img src="${b.img}" alt="${b.title}" style="object-fit:cover; width:100%; height:100%;" onerror="this.src='images/past%20papers.png'">
+             <img src="${b.image}" alt="${b.title}" style="object-fit:cover; width:100%; height:100%;" onerror="this.src='https://placehold.co/400x280/f5f0e8/c1440e?text=${encodeURIComponent(b.code)}'">
               <div class="book-badge-row">
                 <span class="badge badge-faculty">Science</span>
                 <span class="badge ${conditionClass(b.condition)}">${b.condition}</span>
@@ -119,8 +117,8 @@
             <div class="book-price-row">
               <div class="book-price">R${b.price}</div>
               <div class="book-actions">
-                <button class="btn-cart" data-id="${b.id}" onclick="addToCart(${JSON.stringify(b)})">Add to Cart 🛒</button>
-                <button class="btn-wishlist" data-id="${b.id}" onclick="toggleWishlist(${JSON.stringify(b)})" title="Wishlist">♡</button>
+               <button class="btn-cart" data-id="${b.id}" onclick='addToCart(${JSON.stringify(b)})'>Add to Cart 🛒</button>
+               <button class="btn-wishlist" data-id="${b.id}" onclick='toggleWishlist(${JSON.stringify(b)})' title="Wishlist">♡</button>
               </div>
             </div>
           </div>

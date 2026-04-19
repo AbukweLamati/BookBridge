@@ -56,11 +56,11 @@
   <script src="script.js"></script>
   <script>
     var BOOKS = [
-      { id: "law_1", img: "Images/Introduction to South African Law.png", code: "LAW1010F", title: "Introduction to SA Law", condition: "Like New", price: 580, seller: "Jade N., 2nd year", review: "Bought two — selling one. Perfect condition, current edition.", faculty: "Law" },
-      { id: "law_2", img: "Images/Consititutional Law.png", code: "LAW2030S", title: "Constitutional Law of SA", condition: "Good", price: 640, seller: "Khanya M., 3rd year", review: "Tabbed all the case law. Those tabs alone will save you hours in exams.", faculty: "Law" },
-      { id: "law_3", img: "Images/Law of Contract.png", code: "LAW3001F", title: "Law of Contract", condition: "Good", price: 520, seller: "Matthew R., 4th year", review: "Critical for BLC. My notes cover all the leading cases.", faculty: "Law" },
-      { id: "law_4", img: "Images/Criminal Law 5th Edition.png", code: "LAW2020F", title: "Criminal Law 5th Ed.", condition: "Acceptable", price: 400, seller: "Lisa M., graduated", review: "Older edition but all the foundational content is identical. Great for LLB 2.", faculty: "Law" },
-      { id: "law_5", img: "Images/Law of Delict.png", code: "LAW3010S", title: "Law of Delict in SA", condition: "Like New", price: 610, seller: "Brian O., 3rd year", review: "Never got to this module. Completely untouched.", faculty: "Law" }
+      { id: "law_1", image: "Images/Introduction to South African Law.png", code: "LAW1010F", title: "Introduction to SA Law", condition: "Like New", price: 580, seller: "Jade N., 2nd year", review: "Bought two — selling one. Perfect condition, current edition.", faculty: "Law" },
+      { id: "law_2", image: "Images/Consititutional Law.png", code: "LAW2030S", title: "Constitutional Law of SA", condition: "Good", price: 640, seller: "Khanya M., 3rd year", review: "Tabbed all the case law. Those tabs alone will save you hours in exams.", faculty: "Law" },
+      { id: "law_3", image: "Images/Law of Contract.png", code: "LAW3001F", title: "Law of Contract", condition: "Good", price: 520, seller: "Matthew R., 4th year", review: "Critical for BLC. My notes cover all the leading cases.", faculty: "Law" },
+      { id: "law_4", image: "Images/Criminal Law 5th Edition.png", code: "LAW2020F", title: "Criminal Law 5th Ed.", condition: "Acceptable", price: 400, seller: "Lisa M., graduated", review: "Older edition but all the foundational content is identical. Great for LLB 2.", faculty: "Law" },
+      { id: "law_5", image: "Images/Law of Delict.png", code: "LAW3010S", title: "Law of Delict in SA", condition: "Like New", price: 610, seller: "Brian O., 3rd year", review: "Never got to this module. Completely untouched.", faculty: "Law" }
     ];
     
     var cf = 'all';
@@ -79,7 +79,7 @@
       return `
         <div class="book-card reveal reveal-delay-${(i % 4) + 1}">
           <div class="book-thumb">
-            <img src="${imgSrc}" alt="${b.title}" style="object-fit:cover; width:100%; height:100%;" onerror="this.src='images/past%20papers.png'">
+            <img src="${b.image}" alt="${b.title}" style="object-fit:cover; width:100%; height:100%;" onerror="this.src='https://placehold.co/400x280/f5f0e8/c1440e?text=${encodeURIComponent(b.code)}'">
             <div class="book-badge-row">
               <span class="badge badge-faculty">Law</span>
               <span class="badge ${cc(b.condition)}">${b.condition}</span>

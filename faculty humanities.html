@@ -56,11 +56,11 @@
   <script src="script.js"></script>
   <script>
     var BOOKS = [
-      { id: "hum_1", code: "PSY1004F", title: "Psychology: Themes & Variations", condition: "Like New", price: 500, seller: "Ru C., 3rd year", review: "Dropped the course, book is immaculate. Your gain!", faculty: "Humanities", img: "Images/pyschology(themes & variations).png" },
-      { id: "hum_2", code: "SOC1001F", title: "Sociology: A Brief Introduction", condition: "Good", price: 270, seller: "Faith M., 2nd year", review: "Some highlighting in chapter 3. Makes the key concepts pop.", faculty: "Humanities", img: "Images/sociology(a brief introduction).png" },
-      { id: "hum_3", code: "PHL1001F", title: "Ethics: Theory & Practice", condition: "Acceptable", price: 250, seller: "Nico V., graduated", review: "Old edition but covers exactly the same syllabus. Verified with current students.", faculty: "Humanities", img: "Images/Ethics(theory & practice).png" },
-      { id: "hum_4", code: "HIS2010S", title: "South African History Since 1910", condition: "Good", price: 320, seller: "Bongi Z., 3rd year", review: "Very well written textbook. My underlines helped me ace the essay.", faculty: "Humanities", img: "Images/south african history since 1910.png" },
-      { id: "hum_5", code: "PSY2010F", title: "Developmental Psychology", condition: "Good", price: 380, seller: "Maya S., 4th year", review: "Covered the entire dev psych module. Notes on Piaget and Vygotsky are gold.", faculty: "Humanities", img: "Images/development psychology.png" }
+      { id: "hum_1", code: "PSY1004F", title: "Psychology: Themes & Variations", condition: "Like New", price: 500, seller: "Ru C., 3rd year", review: "Dropped the course, book is immaculate. Your gain!", faculty: "Humanities", image: "Images/pyschology(themes & variations).png" },
+      { id: "hum_2", code: "SOC1001F", title: "Sociology: A Brief Introduction", condition: "Good", price: 270, seller: "Faith M., 2nd year", review: "Some highlighting in chapter 3. Makes the key concepts pop.", faculty: "Humanities", image: "Images/sociology(a brief introduction).png" },
+      { id: "hum_3", code: "PHL1001F", title: "Ethics: Theory & Practice", condition: "Acceptable", price: 250, seller: "Nico V., graduated", review: "Old edition but covers exactly the same syllabus. Verified with current students.", faculty: "Humanities", image: "Images/Ethics(theory & practice).png" },
+      { id: "hum_4", code: "HIS2010S", title: "South African History Since 1910", condition: "Good", price: 320, seller: "Bongi Z., 3rd year", review: "Very well written textbook. My underlines helped me ace the essay.", faculty: "Humanities", image: "Images/south african history since 1910.png" },
+      { id: "hum_5", code: "PSY2010F", title: "Developmental Psychology", condition: "Good", price: 380, seller: "Maya S., 4th year", review: "Covered the entire dev psych module. Notes on Piaget and Vygotsky are gold.", faculty: "Humanities", image: "Images/development psychology.png" }
     ];
     
     var cf = 'all';
@@ -79,7 +79,7 @@
       return `
         <div class="book-card reveal reveal-delay-${(i % 4) + 1}">
           <div class="book-thumb">
-            <img src="${imgSrc}" alt="${b.title}" style="object-fit:cover; width:100%; height:100%;" onerror="this.src='images/past%20papers.png'">
+            <img src="${b.image}" alt="${b.title}" style="object-fit:cover; width:100%; height:100%;" onerror="this.src='https://placehold.co/400x280/f5f0e8/c1440e?text=${encodeURIComponent(b.code)}'">
             <div class="book-badge-row">
               <span class="badge badge-faculty">Humanities</span>
               <span class="badge ${cc(b.condition)}">${b.condition}</span>

@@ -56,10 +56,10 @@
   <script src="script.js"></script>
   <script>
     var BOOKS = [
-      { id: "com_1", img: "Images/Principles of MacroEconomics.png", code: "ECO1010F", title: "Principles of Microeconomics", condition: "Good", price: 340, seller: "Yusuf A., 3rd year", review: "Covered the entire ECO1010 syllabus. My notes are in the margins — very useful.", faculty: "Commerce" },
-      { id: "com_2", img: "Images/Finacial Accounting.png", code: "ACC1006W", title: "Financial Accounting", condition: "Like New", price: 490, seller: "Chloe B., 2nd year", review: "Barely used — I relied on lecture slides. Still in perfect condition.", faculty: "Commerce" },
-      { id: "com_3", img: "Images/Business Ethics in SA Context.png", code: "BUS1010F", title: "Business Ethics in SA Context", condition: "Good", price: 280, seller: "Tumi K., graduated", review: "Highlighted the case studies. Really helped for the essays.", faculty: "Commerce" },
-      { id: "com_4", img: "Images/Corporate Finance.png", code: "FIN2020S", title: "Corporate Finance (Ross)", condition: "Like New", price: 420, seller: "Rachel T., 3rd year", review: "Barely touched. Switched to Econ Honours which uses a different book.", faculty: "Commerce" }
+      { id: "com_1", image: "Images/Principles of MacroEconomics.png", code: "ECO1010F", title: "Principles of Microeconomics", condition: "Good", price: 340, seller: "Yusuf A., 3rd year", review: "Covered the entire ECO1010 syllabus. My notes are in the margins — very useful.", faculty: "Commerce" },
+      { id: "com_2", image: "Images/Finacial Accounting.png", code: "ACC1006W", title: "Financial Accounting", condition: "Like New", price: 490, seller: "Chloe B., 2nd year", review: "Barely used — I relied on lecture slides. Still in perfect condition.", faculty: "Commerce" },
+      { id: "com_3", image: "Images/Business Ethics in SA Context.png", code: "BUS1010F", title: "Business Ethics in SA Context", condition: "Good", price: 280, seller: "Tumi K., graduated", review: "Highlighted the case studies. Really helped for the essays.", faculty: "Commerce" },
+      { id: "com_4", image: "Images/Corporate Finance.png", code: "FIN2020S", title: "Corporate Finance (Ross)", condition: "Like New", price: 420, seller: "Rachel T., 3rd year", review: "Barely touched. Switched to Econ Honours which uses a different book.", faculty: "Commerce" }
     ];
     
     var cf = 'all';
@@ -78,7 +78,7 @@
       return `
         <div class="book-card reveal reveal-delay-${(i % 4) + 1}">
           <div class="book-thumb">
-            <img src="${imgSrc}" alt="${b.title}" loading="lazy" style="object-fit:cover; width:100%; height:100%;">
+<img src="${b.image}" alt="${b.title}" style="object-fit:cover; width:100%; height:100%;" onerror="this.src='https://placehold.co/400x280/f5f0e8/c1440e?text=${encodeURIComponent(b.code)}'">
             <div class="book-badge-row">
               <span class="badge badge-faculty">Commerce</span>
               <span class="badge ${cc(b.condition)}">${b.condition}</span>
